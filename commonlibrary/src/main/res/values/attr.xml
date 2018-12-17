@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StateLayout">
+        <!-- 错误提示图标 -->
+        <attr name="errorImg" format="reference" />
+        <!-- 错误提示文字 -->
+        <attr name="errorText" format="string" />
+        <!-- 空数据提示图标 -->
+        <attr name="emptyImg" format="reference" />
+        <!-- 空数据提示文字 -->
+        <attr name="emptyText" format="string" />
+        <!-- 没有网络提示图标 -->
+        <attr name="noNetworkImg" format="reference" />
+        <!-- 没有网络提示文字 -->
+        <attr name="noNetworkText" format="string" />
+        <!-- 超时提示图标 -->
+        <attr name="timeOutImg" format="reference" />
+        <!-- 超时提示文字 -->
+        <attr name="timeOutText" format="string" />
+        <!-- 登录提示图标 -->
+        <attr name="loginImg" format="reference" />
+        <!-- 登录提示文字 -->
+        <attr name="loginText" format="string" />
+        <!-- 加载提示文字 -->
+        <attr name="loadingText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="timeline_style" >
+        <attr name="marker" format="color|reference"/>
+        <attr name="line" format="color|reference"/>
+        <attr name="markerSize" format="dimension"/>
+        <attr name="lineSize" format="dimension"/>
+        <attr name="lineOrientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="linePadding" format="dimension"/>
+        <attr name="markerInCenter" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableLayout">
+        <attr name="parentLayout" format="integer" />
+        <attr name="childLayout" format="integer" />
+    </declare-styleable>
+    <attr name="indexBarTextSize" format="dimension" />
+
+    <declare-styleable name="IndexBar">
+        <attr name="indexBarTextSize" />
+        <attr name="indexBarPressBackground" format="color" />
+    </declare-styleable>
+</resources>

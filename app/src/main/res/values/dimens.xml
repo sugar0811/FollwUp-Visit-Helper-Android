@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="lay_100">100dp</dimen>
+    <dimen name="lay_52">52dp</dimen>
+    <dimen name="lay_62">62dp</dimen>
+    <dimen name="lay_120">120dp</dimen>
+    <dimen name="lay_21">21dp</dimen>
+    <dimen name="lay_116">116dp</dimen>
+    <dimen name="lay_200">200dp</dimen>
+    <dimen name="lay_220">220dp</dimen>
+    <dimen name="lay_180">180dp</dimen>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <cn.wowjoy.commonlibrary.widget.titlebar.TitleBar
+            android:id="@+id/tbTitle"
+            android:background="@color/C_494949"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/titlebar_h"/>
+        <FrameLayout
+            android:id="@+id/flContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</layout>

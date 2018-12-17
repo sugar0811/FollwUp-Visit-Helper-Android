@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="cn.wowjoy.commonlibrary.adapter.LayoutManagers" />
+
+        <variable
+            name="model"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.ExamDetailResponse.ResultsBean.ModeBean" />
+    </data>
+
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <cn.wowjoy.commonlibrary.widget.statelayout.StateLayout
+        android:id="@+id/sl_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/reportRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/C_FFFFFF"
+            app:layoutManager="@{LayoutManagers.linear()}" />
+    </cn.wowjoy.commonlibrary.widget.statelayout.StateLayout>
+</LinearLayout>
+</layout>

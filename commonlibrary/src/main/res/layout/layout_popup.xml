@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popRV"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_toolbar_popover_left"
+    android:fadeScrollbars="false"
+    android:scrollbarSize="@dimen/lay_3"
+    android:scrollbarThumbVertical="@color/C_5777A6"
+    android:scrollbars="vertical" />

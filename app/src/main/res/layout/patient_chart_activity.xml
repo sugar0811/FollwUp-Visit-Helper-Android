@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="cn.wowjoy.commonlibrary.adapter.LayoutManagers"></import>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/headLL"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lay_44"
+        android:background="@color/C_FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/lay_15"
+        android:paddingRight="@dimen/lay_15">
+
+        <LinearLayout
+            android:id="@+id/dictLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_xt" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/lay_6"
+                android:textColor="@color/C_222222"
+                android:textSize="@dimen/lay_16" />
+
+            <ImageView
+                android:id="@+id/downIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/down0"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_258"
+            android:layout_marginTop="@dimen/lay_15"
+            android:background="@color/C_FFFFFF">
+            <FrameLayout
+                android:id="@+id/webRL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/fullIV"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_full" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_35"
+            android:background="@color/C_F2F2F2"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/lay_15"
+            android:paddingRight="@dimen/lay_15">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/tp_rp_date"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:text="@string/tp_res"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:gravity="center_vertical|right"
+                android:text="@string/tp_from"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_1"
+            android:background="@color/C_CCCCCC" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/chartRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="@{LayoutManagers.linear()}" />
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/lay_17"
+        android:paddingVertical="@dimen/lay_10"
+        android:elevation="@dimen/lay_4"
+        android:layout_marginBottom="@dimen/lay_5"
+        android:background="@drawable/card_selector"
+        android:orientation="vertical"
+        >
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="今日晨报"
+                    android:textColor="@color/C_333333"
+                    android:textSize="@dimen/font_14" />
+
+                <ImageView
+                    android:id="@+id/ivPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_1"
+                android:layout_marginVertical="@dimen/lay_10"
+                android:background="@color/C_C4C4C4" />
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2B73床李星，白细胞49g/L上升，总胆红素 55-
+umol/L 上升；值班医生张益生开临时医嘱头孢克洛缓释胶囊。"
+                android:textColor="@color/C_333333"
+                android:textSize="@dimen/font_14" />
+
+        <FrameLayout
+            android:id="@+id/flPickPic"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/lay_10"
+            android:layout_marginBottom="@dimen/lay_5"
+            android:background="@drawable/card_selector"
+            android:padding="@dimen/lay_20"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/lay_100">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_chat_camera"
+                android:layout_width="@dimen/lay_60"
+                android:layout_height="@dimen/lay_60" />
+        </FrameLayout>
+
+
+        </LinearLayout>
+</layout>

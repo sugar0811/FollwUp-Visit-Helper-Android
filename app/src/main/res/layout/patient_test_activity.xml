@@ -1,0 +1,180 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="cn.wowjoy.commonlibrary.adapter.LayoutManagers" />
+
+        <variable
+            name="model"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.TestrepMasteResponse.ResultsBean.ListBean" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_F7F7F7"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/lay_15"
+            android:background="@drawable/text_round_bg_ffffff"
+            android:orientation="vertical"
+            android:padding="@dimen/lay_12">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_28"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/lay_80"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_no"
+                    android:textColor="@color/C_555555"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.report_no}"
+                    android:textColor="@color/C_101010"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/lay_28"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/lay_80"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_item"
+                    android:textColor="@color/C_555555"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.test_type_name}"
+                    android:textColor="@color/C_101010"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_28"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/lay_80"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_doc"
+                    android:textColor="@color/C_555555"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.execute_doc_name}"
+                    android:textColor="@color/C_101010"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/lay_80"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_time"
+                    android:textColor="@color/C_555555"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.report_date}"
+                    android:textColor="@color/C_101010"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_1"
+            android:background="@color/C_CCCCCC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_35"
+            android:background="@color/C_F2F2F2"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/lay_15"
+            android:paddingRight="@dimen/lay_15">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/test_title_item"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"
+                android:gravity="center"
+                android:text="@string/test_title_res"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/test_title_normal"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.15"
+                android:gravity="center"
+                android:text="@string/test_title_unit"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_1"
+            android:background="@color/C_CCCCCC" />
+
+        <cn.wowjoy.commonlibrary.widget.statelayout.StateLayout
+            android:id="@+id/sl_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/testRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="@{LayoutManagers.linear()}" />
+        </cn.wowjoy.commonlibrary.widget.statelayout.StateLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_marginTop="@dimen/lay_10"
+        android:layout_marginBottom="@dimen/lay_10"
+        android:elevation="@dimen/lay_4"
+        android:background="@drawable/card_selector"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lay_160">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/lay_20"
+            android:paddingRight="@dimen/lay_20">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="刘建国  11-12 病程记录"
+                    android:textColor="@color/C_222222"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="查看更多"
+                    android:textColor="@color/C_24A3E6" />
+            </FrameLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/lay_10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="记录时间:" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/lay_10"
+                    android:textColor="@color/C_333333"
+                    android:text="2018-10-11 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginLeft="@dimen/font_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="记录人:" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/lay_10"
+                    android:textColor="@color/C_333333"
+                    android:text="周小亮 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+                <TextView
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/font_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="患者咳嗽、咳痰较前减少，咳黄白色浓痰，无明显胸闷、气促；左髋关节胀痛痛钱，NRS评分：1分；无明显腹痛，腹胀不适"
+                    android:textColor="@color/C_222222" />
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

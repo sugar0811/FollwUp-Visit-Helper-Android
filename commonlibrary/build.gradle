@@ -1,0 +1,129 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            buildConfigField "String", "UPDATE_HOST", "\"https://gitee.com/\""
+            buildConfigField "String", "LOGIN_HOST", "\"https://test-woauth2.rubikstack.com/\""
+            buildConfigField "String", "OUTPATIENT_HOST", "\"https://test-gateway.rubikstack.com/\""
+            buildConfigField "String", "API_HOST", "\"https://test-gateway.rubikstack.com/doctor-assistant/\""
+            buildConfigField "String", "WEB_HOST", "\"http://10.30.21.73:9000/\""
+            buildConfigField "String", "MDID", "\"84e71f389a4b4fe5ad79261b4d56262e\""
+            buildConfigField "String", "ORG_CODE", "\"1001\""
+            buildConfigField "String", "ORG_NAME", "\"树兰\""
+            buildConfigField "String", "AUTHOR", "\"Authorization:Basic ZGV2X2RvY3Rvcl9hc3Npc3RhbnRfY2xpZW50X2lkX2NsaTpzZWM=\""
+//            buildConfigField "String", "UPDATE_HOST", "\"https://gitee.com/\""
+//            buildConfigField "String", "OUTPATIENT_HOST", "\"https://gateway.rubikstack.com/\""
+//            buildConfigField "String", "LOGIN_HOST", "\"https://woauth2.rubikstack.com/\""
+//            buildConfigField "String", "API_HOST", "\"https://gateway.rubikstack.com/ms-doctor-assistant/\""
+//            buildConfigField "String", "WEB_HOST", "\"http://10.30.21.73:9000/\""
+//            buildConfigField "String", "MDID", "\"2eebbccd66d811e7af980242af104d37\""
+//            buildConfigField "String", "ORG_CODE", "\"1001\""
+//            buildConfigField "String", "ORG_NAME", "\"树兰\""
+//            buildConfigField "String", "AUTHOR", "\"Authorization:Basic MDU4MjY5MGI2YzM5NDE5YmE1YTYxYTdmMWMyZmIyZjE6ZDZmYjM1MjczNzcxNDk4ZWI5ZDBjMzM5ZTYxN2YyZTg=\""
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "UPDATE_HOST", "\"https://gitee.com/\""
+            buildConfigField "String", "OUTPATIENT_HOST", "\"https://gateway.rubikstack.com/\""
+            buildConfigField "String", "LOGIN_HOST", "\"https://woauth2.rubikstack.com/\""
+            buildConfigField "String", "API_HOST", "\"https://gateway.rubikstack.com/ms-doctor-assistant/\""
+            buildConfigField "String", "WEB_HOST", "\"http://10.30.21.73:9000/\""
+            buildConfigField "String", "MDID", "\"2eebbccd66d811e7af980242af104d37\""
+            buildConfigField "String", "ORG_CODE", "\"1001\""
+            buildConfigField "String", "ORG_NAME", "\"树兰\""
+            buildConfigField "String", "AUTHOR", "\"Authorization:Basic MDU4MjY5MGI2YzM5NDE5YmE1YTYxYTdmMWMyZmIyZjE6ZDZmYjM1MjczNzcxNDk4ZWI5ZDBjMzM5ZTYxN2YyZTg=\""
+        }
+
+//        demo {
+//            minifyEnabled false
+//            shrinkResources false
+//            debuggable false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//
+//            buildConfigField "String", "UPDATE_HOST", "\"https://gitee.com/\""
+//            buildConfigField "String", "OUTPATIENT_HOST", "\"https://gateway.rubikstack.com/\""
+//            buildConfigField "String", "LOGIN_HOST", "\"https://woauth2-demo.rubikstack.com/\""
+//            buildConfigField "String", "API_HOST", "\"https://gateway-demo.rubikstack.com/ms-doctor-assistant/\""
+//            buildConfigField "String", "WEB_HOST", "\"http://10.30.21.73:9000/\""
+//            buildConfigField "String", "MDID", "\"383a2d7d7e9311e8b0d902420ac83504\""
+//            buildConfigField "String", "ORG_CODE", "\"1001\""
+//            buildConfigField "String", "ORG_NAME", "\"树兰\""
+//            buildConfigField "String", "AUTHOR", "\"Authorization:Basic MDU4MjY5MGI2YzM5NDE5YmE1YTYxYTdmMWMyZmIyZjE6ZDZmYjM1MjczNzcxNDk4ZWI5ZDBjMzM5ZTYxN2YyZTg=\""
+//        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/layout'] } }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.1.1'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support:design:27.1.1'
+    api 'com.squareup.okhttp3:okhttp:3.11.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.shizhefei:ViewPagerIndicator:1.1.7'
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+    api 'android.arch.lifecycle:extensions:1.1.1'
+    api "android.arch.lifecycle:viewmodel:1.1.1"
+    api "android.arch.lifecycle:livedata:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    implementation 'cn.bingoogolapple:bga-badgeview-api:1.1.8'
+    annotationProcessor "cn.bingoogolapple:bga-badgeview-compiler:1.1.8"
+    implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    implementation 'com.just.agentweb:agentweb:4.0.2'
+    implementation 'com.github.promeg:tinypinyin:2.0.3'
+    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+    implementation('com.squareup.retrofit2:converter-simplexml:2.4.0') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+    implementation 'com.noober.backgorund:core:1.0.5'
+    implementation 'com.jeremyliao:live-event-bus:0.0.1'
+    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+}

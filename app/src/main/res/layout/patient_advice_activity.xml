@@ -1,0 +1,177 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="cn.wowjoy.commonlibrary.adapter.LayoutManagers" />
+
+        <variable
+            name="model"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.InpatientAdmisResponse.ResultsBean.ModeBean" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/C_F5F5F5"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_60"
+            android:background="@color/C_494949">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_40"
+                android:background="@color/C_494949" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_20"
+                android:layout_alignParentBottom="true"
+                android:background="@color/C_F5F5F5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_40"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/lay_4"
+                android:layout_marginLeft="@dimen/lay_15"
+                android:layout_marginRight="@dimen/lay_15"
+                android:background="@drawable/corners_w"
+                android:elevation="@dimen/lay_3"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/whoLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/whoTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/in_advice_t_0"
+                        android:textColor="@color/C_222222"
+                        android:textSize="@dimen/font_16" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/lay_4"
+                        android:src="@drawable/down1" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/line_1"
+                    android:layout_height="@dimen/lay_15"
+                    android:background="@color/C_CCCCCC" />
+
+                <LinearLayout
+                    android:id="@+id/adTypeLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/adTypeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/lay_2"
+                        android:gravity="center"
+                        android:text="@string/in_advice_t_1"
+                        android:textColor="@color/C_222222"
+                        android:textSize="@dimen/font_16" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/lay_4"
+                        android:src="@drawable/down1" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/line_1"
+                    android:layout_height="@dimen/lay_15"
+                    android:background="@color/C_CCCCCC" />
+
+                <LinearLayout
+                    android:id="@+id/itemTypeLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/itemTypeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/in_advice_t_2"
+                        android:textColor="@color/C_222222"
+                        android:textSize="@dimen/font_16" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/lay_4"
+                        android:src="@drawable/down1" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/line_1"
+                    android:layout_height="@dimen/lay_15"
+                    android:background="@color/C_CCCCCC" />
+
+                <LinearLayout
+                    android:id="@+id/statusLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/statusTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/in_advice_t_3"
+                        android:textColor="@color/C_222222"
+                        android:textSize="@dimen/font_16" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/lay_4"
+                        android:src="@drawable/down1" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <cn.wowjoy.commonlibrary.widget.statelayout.StateLayout
+            android:id="@+id/sl_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/adviceRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="@{LayoutManagers.linear()}" />
+        </cn.wowjoy.commonlibrary.widget.statelayout.StateLayout>
+    </LinearLayout>
+
+</layout>

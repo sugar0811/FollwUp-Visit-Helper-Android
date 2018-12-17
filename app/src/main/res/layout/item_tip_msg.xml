@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="mobile.fuvh.cn.followupvisithelper.voice.bean.DrawerMenuBean"/>
+
+    </data>
+
+<LinearLayout
+    android:layout_marginRight="@dimen/lay_10"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/card_selector"
+    android:gravity="center"
+    android:layout_width="@dimen/lay_100"
+    android:layout_height="@dimen/lay_120">
+    <ImageView
+        app:picRes="@{item.menuIcon}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="@dimen/font_12"
+        android:textColor="@color/C_999999"
+        android:layout_marginTop="@dimen/lay_14"
+        android:maxWidth="@dimen/lay_70"
+        android:text="@{item.menuName}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</layout>

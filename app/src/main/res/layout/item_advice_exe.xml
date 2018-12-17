@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.DoctoraDviceExeResponse.ResultsBean.ListBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lay_44"
+        android:layout_marginBottom="@dimen/lay_15"
+        android:background="@color/C_FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/lay_15"
+        android:paddingRight="@dimen/lay_15">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in_advice_exe_time"
+            android:textColor="@color/C_555555"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{item.getFormatTime()}"
+            android:textColor="@color/C_101010"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in_advice_exer"
+            android:textColor="@color/C_555555"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:layout_width="@dimen/lay_50"
+            android:layout_height="wrap_content"
+            android:text="@{item.execute_user_name}"
+            android:textColor="@color/C_101010"
+            android:textSize="@dimen/font_15" />
+    </LinearLayout>
+</layout>

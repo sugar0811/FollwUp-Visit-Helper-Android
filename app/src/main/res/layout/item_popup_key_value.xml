@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.KeyValue.ResultsBean.ListBean" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lay_40"
+        android:gravity="center"
+        android:text="@{item.value}"
+        android:textColor="@color/C_222222"
+        android:textSize="@dimen/font_16" />
+
+</layout>

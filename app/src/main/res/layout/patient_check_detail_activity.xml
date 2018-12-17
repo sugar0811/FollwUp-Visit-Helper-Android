@@ -1,0 +1,191 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.ExamListResponse.ResultsBean.ListBean" />
+    </data>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <cn.wowjoy.commonlibrary.widget.statelayout.StateLayout
+            android:id="@+id/sl_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/C_F7F7F7"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/lay_50">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/lay_15"
+                        android:background="@drawable/text_round_bg_ffffff"
+                        android:orientation="vertical"
+                        android:padding="@dimen/lay_12">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/lay_28"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/lay_80"
+                                android:layout_height="wrap_content"
+                                android:text="@string/exam_no"
+                                android:textColor="@color/C_555555"
+                                android:textSize="@dimen/font_15" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{model.report_no}"
+                                android:textColor="@color/C_101010"
+                                android:textSize="@dimen/font_15" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/lay_28"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/lay_80"
+                                android:layout_height="wrap_content"
+                                android:text="@string/exam_item"
+                                android:textColor="@color/C_555555"
+                                android:textSize="@dimen/font_15" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{model.exam_item_name}"
+                                android:textColor="@color/C_101010"
+                                android:textSize="@dimen/font_15" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/lay_28"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/lay_80"
+                                android:layout_height="wrap_content"
+                                android:text="@string/exam_doc"
+                                android:textColor="@color/C_555555"
+                                android:textSize="@dimen/font_15" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{model.request_doc_name}"
+                                android:textColor="@color/C_101010"
+                                android:textSize="@dimen/font_15" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/lay_80"
+                                android:layout_height="wrap_content"
+                                android:text="@string/exam_time"
+                                android:textColor="@color/C_555555"
+                                android:textSize="@dimen/font_15" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{model.execute_date}"
+                                android:textColor="@color/C_101010"
+                                android:textSize="@dimen/font_15" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/lay_15"
+                        android:layout_marginLeft="@dimen/lay_15"
+                        android:layout_marginRight="@dimen/lay_15"
+                        android:background="@drawable/text_round_bg_ffffff"
+                        android:orientation="vertical"
+                        android:padding="@dimen/lay_12">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/lay_10"
+                                android:text="@string/exam_desc"
+                                android:textColor="@color/C_222222"
+                                android:textSize="@dimen/font_16" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{model.exam_describe}"
+                                android:textColor="@color/C_555555"
+                                android:textSize="@dimen/font_15" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/lay_15"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/lay_10"
+                                android:text="@string/exam_sub"
+                                android:textColor="@color/C_222222"
+                                android:textSize="@dimen/font_16" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{model.exam_result}"
+                                android:textColor="@color/C_555555"
+                                android:textSize="@dimen/font_15" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+
+        </RelativeLayout>
+        </cn.wowjoy.commonlibrary.widget.statelayout.StateLayout>
+    </LinearLayout>
+
+</layout>

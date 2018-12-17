@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="C_5777A6">#5777A6</color>
+    <color name="C_5777A6_pressed">#5777D6</color>
+    <color name="C_FF4081">#FF4081</color>
+
+    <color name="C_00000000">#00000000</color>
+    <color name="C_10000000">#10000000</color>
+    <color name="C_80000000">#80000000</color>
+
+    <color name="C_222222">#222222</color>
+    <color name="C_FFFFFF">#FFFFFF</color>
+    <color name="C_EEEEEE">#EEEEEE</color>
+    <color name="C_FAFBFC">#FAFBFC</color>
+    <color name="C_F5F5F5">#F5F5F5</color>
+    <color name="C_F7F7F7">#F7F7F7</color>
+    <color name="C_F2F2F2">#F2F2F2</color>
+    <color name="C_EFF3F8">#EFF3F8</color>
+    <color name="C_DBDBDB">#DBDBDB</color>
+    <color name="C_D4D4D4">#D4D4D4</color>
+    <color name="C_CCCCCC">#CCCCCC</color>
+    <color name="C_C8C7CC">#C8C7CC</color>
+    <color name="C_AAAAAA">#AAAAAA</color>
+    <color name="C_A6A6A6">#A6A6A6</color>
+    <color name="C_999999">#999999</color>
+    <color name="C_666666">#666666</color>
+    <color name="C_5E6066">#5E6066</color>
+    <color name="C_555555">#555555</color>
+    <color name="C_444444">#444444</color>
+    <color name="C_101010">#101010</color>
+    <color name="C_494949">#46acf6</color>
+
+    <color name="C_CC36A5EE">#CC36A5EE</color>
+    <color name="C_317DCD">#317DCD</color>
+    <color name="C_499DF2">#499DF2</color>
+    <color name="C_5EB7F1">#5EB7F1</color>
+    <color name="C_36A5EE">#36A5EE</color>
+    <color name="C_2176BF">#2176BF</color>
+
+    <color name="C_8781BD">#8781BD</color>
+    <color name="C_8DC63F">#8DC63F</color>
+
+    <color name="C_F2B44F">#F2B44F</color>
+    <color name="C_FCCB78">#FCCB78</color>
+    <color name="C_F67764">#F67764</color>
+    <color name="C_FFD246">#FFD246</color>
+    <color name="C_DD5F43">#DD5F43</color>
+    <color name="C_6C6C6C">#6C6C6C</color>
+    <color name="C_C0C0C0">#C0C0C0</color>
+    <color name="C_F8F8F8">#F8F8F8</color>
+    <color name="C_D1DBE9">#D1DBE9</color>
+    <color name="C_DDDDDD">#DDDDDD</color>
+    <color name="C_FFA513">#FFA513</color>
+    <color name="C_E4E4E4">#E4E4E4</color>
+    <color name="C_DEDEDE">#DEDEDE</color>
+    <color name="C_3F51B5">#3F51B5</color>
+    <color name="C_E7E8EC">#E7E8EC</color>
+    <color name="C_5EF624">#5EF624</color>
+    <color name="C_333333">#333333</color>
+
+</resources>

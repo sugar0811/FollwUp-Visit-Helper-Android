@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="cn.wowjoy.commonlibrary.adapter.LayoutManagers"/>
+    </data>
+<RelativeLayout
+    xmlns:waveview="http://schemas.android.com/apk/res-auto"
+    android:background="@color/C_EFF5F8"
+    android:id="@+id/rlRoot"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobile.fuvh.cn.followupvisithelper.MainActivity">
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/dlMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <cn.wowjoy.commonlibrary.widget.titlebar.TitleBar
+            android:id="@+id/tbTitle"
+            android:background="@color/C_494949"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_42">
+        </cn.wowjoy.commonlibrary.widget.titlebar.TitleBar>
+        <android.support.v4.widget.NestedScrollView
+            android:paddingBottom="@dimen/lay_100"
+            android:id="@+id/nsScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:paddingTop="@dimen/lay_20"
+            android:id="@+id/llScrollRoot"
+            android:paddingRight="@dimen/lay_10"
+            android:paddingLeft="@dimen/lay_10"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:text="上午好！"
+            android:textSize="@dimen/font_16"
+            android:textColor="@color/C_333333"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="@dimen/lay_10"
+            android:textSize="@dimen/lay_14"
+            android:textColor="@color/C_666666"
+            android:text="张浩杰医生，新的一天又开始啦!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <mobile.fuvh.cn.followupvisithelper.voice.widget.ItemReadPaperView
+            android:id="@+id/mvPaper"
+            android:layout_marginTop="@dimen/font_19"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_116">
+        </mobile.fuvh.cn.followupvisithelper.voice.widget.ItemReadPaperView>
+        <TextView
+            android:text="您可以这样跟我说:"
+            android:id="@+id/tvContent"
+            android:layout_marginVertical="@dimen/lay_10"
+            android:layout_gravity="left"
+            android:padding="@dimen/lay_10"
+            android:textColor="@color/C_FFFFFF"
+            android:background="@drawable/corners_1eaeff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+         <android.support.v7.widget.RecyclerView
+             android:id="@+id/rvTipMsg"
+             app:layoutManager="@{LayoutManagers.linearL()}"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+         </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/llMsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </LinearLayout>
+        </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivInput"
+                android:padding="@dimen/lay_20"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/lay_20"
+                android:layout_toLeftOf="@id/ivVoice"
+                android:layout_marginRight="@dimen/lay_50"
+                android:src="@drawable/keyboard"
+                android:scaleType="centerCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/voice_wave3"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/ivVoice"
+                android:layout_marginBottom="@dimen/lay_20"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.dnkilic.waveform.WaveView
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/lay_30"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                waveview:deneme="true"
+                android:id="@+id/wvWave">
+            </com.dnkilic.waveform.WaveView>
+           <LinearLayout
+
+               android:id="@+id/llBottomRoot"
+               android:visibility="gone"
+               android:padding="10dp"
+               android:layout_alignParentBottom="true"
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <android.support.v7.widget.RecyclerView
+                   android:id="@+id/rvInputTip"
+                   app:layoutManager="@{LayoutManagers.linearL()}"
+                   android:layout_alignParentBottom="true"
+                   android:layout_marginBottom="@dimen/lay_10"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+               </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/llInput"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:background="@drawable/chat_input_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/et_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:hint="请输入内容..."
+                    android:textColorHint="@color/C_C3CDC4"
+                    android:maxHeight="@dimen/lay_180"
+                    android:minHeight="@dimen/lay_28"
+                    android:singleLine="false" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_marginLeft="3dp"
+                        android:id="@+id/btSendMessage"
+                        android:layout_width="@dimen/lay_0"
+                        android:layout_height="30dp"
+                        android:background="@drawable/corners_228ef8"
+                        android:text="发送"
+                        android:textColor="@color/white"
+                        />
+
+
+            </LinearLayout>
+           </LinearLayout>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:paddingTop="@dimen/lay_56"
+            android:background="@color/C_FFFFFF"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/menu_layout_left"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            >
+                <ImageView
+                    android:src="@drawable/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvTest2"
+                    android:layout_marginTop="@dimen/lay_14"
+                    android:layout_marginBottom="@dimen/lay_10"
+                    android:text="张浩杰"
+                    android:textSize="@dimen/font_16"
+                    android:textColor="@color/C_333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                android:textColor="@color/C_666666"
+                android:textSize="@dimen/font_14"
+                android:text="内科"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="@dimen/lay_10"
+                android:text="主任医师"
+                android:textColor="@color/C_666666"
+                android:textSize="@dimen/font_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvMenu"
+                android:layout_marginTop="@dimen/lay_56"
+                app:layoutManager="@{LayoutManagers.linear()}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+
+    </android.support.v4.widget.DrawerLayout>
+</RelativeLayout>
+</layout>

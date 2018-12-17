@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.DoctoraDviceListResponse.ResultsBean.ListBean.ChildrenBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/C_FFFFFF"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/lay_15"
+        android:paddingRight="@dimen/lay_15">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/lay_40"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/lay_10"
+                android:layout_height="@dimen/lay_10"
+                android:layout_marginRight="@dimen/lay_10"
+                android:layout_marginTop="@dimen/lay_15"
+                android:background="@drawable/round_bg_ef9c30"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_10"
+                android:layout_weight="1"
+                android:text="@{item.docadvise_item_name}"
+                android:textColor="@color/C_222222"
+                android:textSize="@dimen/font_16" />
+
+            <!--<TextView-->
+                <!--android:layout_width="@dimen/lay_20"-->
+                <!--android:layout_height="@dimen/lay_20"-->
+                <!--android:layout_marginLeft="@dimen/lay_2"-->
+                <!--android:layout_marginRight="@dimen/lay_2"-->
+                <!--android:layout_marginTop="@dimen/lay_8"-->
+                <!--android:background="@drawable/circle_30c6a4"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/in_advice_jing"-->
+                <!--android:textColor="@color/C_FFFFFF"-->
+                <!--android:textSize="@dimen/font_12"-->
+                <!--android:visibility='@{"1".equals(item.matching_drug)?View.VISIBLE:View.GONE}' />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="@dimen/lay_20"-->
+                <!--android:layout_height="@dimen/lay_20"-->
+                <!--android:layout_marginLeft="@dimen/lay_2"-->
+                <!--android:layout_marginRight="@dimen/lay_2"-->
+                <!--android:layout_marginTop="@dimen/lay_8"-->
+                <!--android:background="@drawable/circle_f36969"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/in_advice_wei"-->
+                <!--android:textColor="@color/C_FFFFFF"-->
+                <!--android:textSize="@dimen/font_12"-->
+                <!--android:visibility='@{"1".equals(item.danger_drug)?View.VISIBLE:View.GONE}' />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="@dimen/lay_20"-->
+                <!--android:layout_height="@dimen/lay_20"-->
+                <!--android:layout_marginLeft="@dimen/lay_2"-->
+                <!--android:layout_marginRight="@dimen/lay_2"-->
+                <!--android:layout_marginTop="@dimen/lay_8"-->
+                <!--android:background="@drawable/circle_feac2a"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/in_advice_die"-->
+                <!--android:textColor="@color/C_FFFFFF"-->
+                <!--android:textSize="@dimen/font_12"-->
+                <!--android:visibility='@{"1".equals(item.may_fall_drug)?View.VISIBLE:View.GONE}' />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/lay_10"
+            android:layout_marginLeft="@dimen/lay_20"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/treat_drag_dose"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.drug_quantity+item.drug_unit}"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/lay_15"
+                android:text="@string/use_drug_channel_name"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.drug_dosage_from_name}"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/lay_15"
+                android:text="@string/use_drug_freq"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.drug_use_frequency_name}"
+                android:textColor="@color/C_555555"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_1"
+            android:background="@drawable/dash_line_mini"
+            android:layerType="software" />
+    </LinearLayout>
+</layout>

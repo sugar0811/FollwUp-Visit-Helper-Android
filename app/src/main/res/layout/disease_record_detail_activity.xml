@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:paddingBottom="@dimen/lay_50"
+                android:background="@color/C_FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:padding="@dimen/lay_10"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="@dimen/font_18"
+                    android:textColor="@color/C_222222"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="刘建国 11-07 病程记录" />
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="记录时间：" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2018-11-27"
+                        android:textColor="@color/C_222222" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/lay_20"
+                        android:text="记录人：" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="周亮亮"
+                        android:textColor="@color/C_222222" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_border_bg_aaaaaa"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/lay_5"
+                    android:paddingLeft="@dimen/lay_10"
+                    android:paddingRight="@dimen/lay_10"
+                    android:paddingTop="@dimen/lay_5">
+
+                    <ImageView
+                        android:layout_width="@dimen/lay_30"
+                        android:layout_height="@dimen/lay_30"
+                        android:layout_gravity="center"
+                        android:src="@drawable/play" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/lay_10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="15 : 24"
+                            android:textColor="@color/C_222222" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2018.12.01 16:40" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="@dimen/lay_20"
+                        android:text="20145KB" />
+
+                </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:paddingLeft="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:background="@color/C_F2F2F2"
+                    android:layout_height="@dimen/lay_30"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/lay_5"
+                    android:text="查房沟通"
+                    android:textSize="@dimen/font_14" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_bottom_border_bg"
+                    android:padding="@dimen/lay_10"
+                    android:text="患者咳嗽、咳痰较前减少，无明显胸闷、气促；无明显腹痛，腹胀不适" />
+
+                <TextView
+                    android:paddingLeft="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:background="@color/C_F2F2F2"
+                    android:layout_height="@dimen/lay_30"
+                    android:layout_width="match_parent"
+                    android:text="查体体征"
+                    android:textSize="@dimen/font_14" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_bottom_border_bg"
+                    android:orientation="vertical"
+                    android:padding="@dimen/lay_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查体，神清，精神可；体温 37.3摄氏度，心率70次/分，呼吸18次/分，血压141/71mmHg，24小时总入量2028ml，总出量1900ml，总尿量1900ml，皮肤巩膜无明显感染，肺部听诊呼吸音粗，可闻及湿啰音，心脏听诊未及病理性杂音，腹略膨，无压痛，无调痛，双下肢无明显凹陷性水肿，神经系统" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/lay_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/lay_60"
+                            android:layout_weight="1"
+                            android:paddingRight="@dimen/lay_5"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/default_pic" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/lay_60"
+                            android:layout_weight="1"
+                            android:paddingRight="@dimen/lay_5"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/default_pic" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/lay_60"
+                            android:layout_weight="1"
+                            android:paddingRight="@dimen/lay_5"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/default_pic" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/lay_60"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/lay_5"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/default_pic" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:paddingLeft="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:background="@color/C_F2F2F2"
+                    android:layout_height="@dimen/lay_30"
+                    android:layout_width="match_parent"
+                    android:text="辅助检查"
+                    />
+
+                <FrameLayout
+                    android:padding="@dimen/lay_10"
+                    android:background="@drawable/top_bottom_border_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="血常规+超敏CRP（快速病）（病房）"
+                            android:textColor="@color/C_222222"
+                            android:textSize="@dimen/font_15" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="中性粒细胞(%):73.3%," />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="红细胞计数3.75*10E12/L" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="血红蛋白: 120/L" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="C反应蛋白： 28.9mg/L" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="2018/10/31"
+                        android:textColor="@color/C_222222"
+                        android:textSize="@dimen/lay_15" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:padding="@dimen/lay_10"
+                    android:background="@drawable/top_bottom_border_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="肝肾脂糖电解质测定+心肌酶谱+镁"
+                            android:textColor="@color/C_222222"
+                            android:textSize="@dimen/font_15" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="总蛋白(TP)：48.9 mg/L，" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="白蛋白(Alb)：29.1 g/L" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="总胆红素(T-Bil)： 44 umol/L" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="直接胆红素(D-Bil)：26 umol/L" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="2018/10/31"
+                        android:textColor="@color/C_222222"
+                        android:textSize="@dimen/lay_15" />
+                </FrameLayout>
+
+                <TextView
+                    android:paddingLeft="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:background="@color/C_F2F2F2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_30"
+                    android:text="医嘱调整" />
+
+                <TextView
+                    android:paddingLeft="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_30"
+                    android:background="@color/C_FFFFFF"
+                    android:text="停用 拉氧头孢钠针"
+                    android:textColor="@color/C_222222" />
+
+                <TextView
+                    android:paddingLeft="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_30"
+                    android:background="@color/C_FFFFFF"
+                    android:text="新增 复方草珊瑚含片"
+                    android:textColor="@color/C_222222" />
+
+
+            </LinearLayout>
+        </ScrollView>
+        <Button
+            android:id="@+id/btConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_50"
+            android:layout_alignParentBottom="true"
+            android:background="@color/C_499DF2"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="@color/C_FFFFFF"
+            android:textSize="@dimen/font_16" />
+    </RelativeLayout>
+</layout>

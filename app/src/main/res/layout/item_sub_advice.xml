@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+
+    <LinearLayout
+        android:id="@+id/adviceSubItemLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_2"
+            android:background="@drawable/dash_line_mini"
+            android:layerType="software" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lay_44"
+            android:background="@color/C_FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/adContentTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/C_222222"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/jingTV"
+                android:layout_width="@dimen/lay_20"
+                android:layout_height="@dimen/lay_20"
+                android:layout_margin="@dimen/lay_2"
+                android:background="@drawable/circle_30c6a4"
+                android:gravity="center"
+                android:text="@string/in_advice_jing"
+                android:textColor="@color/C_FFFFFF"
+                android:textSize="@dimen/font_12"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/weiTV"
+                android:layout_width="@dimen/lay_20"
+                android:layout_height="@dimen/lay_20"
+                android:layout_margin="@dimen/lay_2"
+                android:background="@drawable/circle_f36969"
+                android:gravity="center"
+                android:text="@string/in_advice_wei"
+                android:textColor="@color/C_FFFFFF"
+                android:textSize="@dimen/font_12"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/dieTV"
+                android:layout_width="@dimen/lay_20"
+                android:layout_height="@dimen/lay_20"
+                android:layout_margin="@dimen/lay_2"
+                android:background="@drawable/circle_feac2a"
+                android:gravity="center"
+                android:text="@string/in_advice_die"
+                android:textColor="@color/C_FFFFFF"
+                android:textSize="@dimen/font_12"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

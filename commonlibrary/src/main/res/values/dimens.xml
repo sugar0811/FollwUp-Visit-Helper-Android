@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="line_1">1px</dimen>
+    <dimen name="lay_f8">-8dp</dimen>
+    <dimen name="lay_0">0dp</dimen>
+    <dimen name="lay_1">1dp</dimen>
+    <dimen name="lay_2">2dp</dimen>
+    <dimen name="lay_3">3dp</dimen>
+    <dimen name="lay_4">4dp</dimen>
+    <dimen name="lay_5">5dp</dimen>
+    <dimen name="lay_6">6dp</dimen>
+    <dimen name="lay_7">7dp</dimen>
+    <dimen name="lay_8">8dp</dimen>
+    <dimen name="lay_10">10dp</dimen>
+    <dimen name="lay_11">11dp</dimen>
+    <dimen name="lay_12">12dp</dimen>
+    <dimen name="lay_13">13dp</dimen>
+    <dimen name="lay_14">14dp</dimen>
+    <dimen name="lay_15">15dp</dimen>
+    <dimen name="lay_16">16dp</dimen>
+    <dimen name="lay_17">17dp</dimen>
+    <dimen name="lay_20">20dp</dimen>
+    <dimen name="lay_25">25dp</dimen>
+    <dimen name="lay_26">26dp</dimen>
+    <dimen name="lay_28">28dp</dimen>
+    <dimen name="lay_30">30dp</dimen>
+    <dimen name="lay_35">35dp</dimen>
+    <dimen name="lay_38">38dp</dimen>
+    <dimen name="lay_40">40dp</dimen>
+    <dimen name="lay_44">44dp</dimen>
+    <dimen name="lay_46">46dp</dimen>
+    <dimen name="lay_48">48dp</dimen>
+    <dimen name="lay_50">50dp</dimen>
+    <dimen name="lay_55">55dp</dimen>
+    <dimen name="lay_56">56dp</dimen>
+    <dimen name="lay_57">57dp</dimen>
+    <dimen name="lay_58">58dp</dimen>
+    <dimen name="lay_60">60dp</dimen>
+    <dimen name="lay_64">64dp</dimen>
+    <dimen name="lay_70">70dp</dimen>
+    <dimen name="lay_72">72dp</dimen>
+    <dimen name="lay_78">78dp</dimen>
+    <dimen name="lay_80">80dp</dimen>
+    <dimen name="lay_85">85dp</dimen>
+    <dimen name="lay_102">102dp</dimen>
+    <dimen name="lay_160">160dp</dimen>
+    <dimen name="lay_140">140dp</dimen>
+    <dimen name="lay_165">165dp</dimen>
+    <dimen name="lay_196">196dp</dimen>
+
+    <dimen name="font_10">10dp</dimen>
+    <dimen name="font_12">12dp</dimen>
+    <dimen name="font_13">13dp</dimen>
+    <dimen name="font_14">14sp</dimen>
+    <dimen name="font_15">15dp</dimen>
+    <dimen name="font_16">16dp</dimen>
+    <dimen name="font_17">17dp</dimen>
+    <dimen name="font_18">18dp</dimen>
+    <dimen name="font_19">19dp</dimen>
+    <dimen name="font_20">20dp</dimen>
+    <dimen name="font_24">24dp</dimen>
+    <dimen name="font_32">32dp</dimen>
+    <dimen name="font_40">40dp</dimen>
+    <dimen name="lay_43">43dp</dimen>
+    <dimen name="lay_130">130dp</dimen>
+    <dimen name="lay_240">240dp</dimen>
+    <dimen name="lay_45">45dp</dimen>
+    <dimen name="lay_115">115dp</dimen>
+    <dimen name="lay_270">270dp</dimen>
+    <dimen name="lay_54">54dp</dimen>
+    <dimen name="lay_156">156dp</dimen>
+    <dimen name="lay_258">258dp</dimen>
+    <dimen name="lay_112">112dp</dimen>
+    <dimen name="lay_42">42dp</dimen>
+    <dimen name="lay_88">88dp</dimen>
+
+    <dimen name="order_detial_icon">20dp</dimen>
+    <dimen name="flag_radius">10dp</dimen>
+    <dimen name="doc_data_icon">@dimen/lay_17</dimen>
+    <dimen name="middle_icon_">40dp</dimen>
+    <dimen name="title_margin_top">10dp</dimen>
+
+
+
+    <!--状态布局通用-->
+    <dimen name="state_margin_top">8dp</dimen>
+    <dimen name="state_text_size">12sp</dimen>
+    <dimen name="retry_tip">13sp</dimen>
+
+    <!--titlebar size-->
+    <dimen name="titlebar_h">42dp</dimen>
+
+</resources>

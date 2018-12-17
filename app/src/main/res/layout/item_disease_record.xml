@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="item"
+            type="mobile.fuvh.cn.followupvisithelper.patient.bean.DiseaseRecordItem"/>
+        <import type="android.view.View" />
+    </data>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/lay_10"
+    android:background="@drawable/selector_white_item_clickable"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/lay_70">
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:textSize="@dimen/font_18"
+        android:text="@{item.recordTitle}"
+        android:textColor="@color/C_222222"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="@dimen/lay_5"
+        android:visibility="visible"
+        android:text="@{item.content}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginRight="@dimen/lay_30"
+        android:padding="@dimen/lay_5"
+        android:textColor="@color/C_FFFFFF"
+        android:background="@drawable/corners2_317dcc"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="@{item.showState?View.VISIBLE : View.GONE}"
+        android:text="@{item.stateStr}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginRight="@dimen/lay_10"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/next_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_alignParentBottom="true"
+        android:background="@color/C_D4D4D4"
+        android:layout_width="match_parent"
+        android:layout_height="1px">
+    </View>
+
+</RelativeLayout>
+</layout>
