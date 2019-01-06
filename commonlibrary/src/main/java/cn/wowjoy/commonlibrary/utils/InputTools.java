@@ -23,7 +23,9 @@ public class InputTools {
     //显示虚拟键盘
     public static void ShowKeyboard(View v) {
         InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(v, InputMethodManager.SHOW_FORCED);
+        if(imm != null) {
+            imm.showSoftInput(v, InputMethodManager.SHOW_FORCED);
+        }
 
     }
 

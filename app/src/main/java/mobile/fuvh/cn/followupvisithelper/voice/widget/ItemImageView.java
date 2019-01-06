@@ -42,6 +42,7 @@ public class ItemImageView extends IChatView{
 
     private void init() {
         LayoutInflater.from(getContext()).inflate(R.layout.item_pick_camera,this);
+
         mIvPic = findViewById(R.id.ivPic);
         listener();
     }

@@ -14,7 +14,7 @@
     android:background="@drawable/card_selector"
     android:gravity="center"
     android:layout_width="@dimen/lay_100"
-    android:layout_height="@dimen/lay_120">
+    android:layout_height="@dimen/lay_100">
     <ImageView
         app:picRes="@{item.menuIcon}"
         android:layout_width="wrap_content"

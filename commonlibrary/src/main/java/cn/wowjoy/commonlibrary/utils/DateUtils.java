@@ -74,6 +74,12 @@ public class DateUtils {
         return sDateFormat.format(date);
     }
 
+    public static String getMonthDay(Date date) {
+        SimpleDateFormat sDateFormat = new SimpleDateFormat("MM-dd");
+        return sDateFormat.format(date);
+    }
+
+
     public static String getCurrFullTime() {
         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sDateFormat.format(new Date());
@@ -157,7 +163,4 @@ public class DateUtils {
 
         return "";
     }
-
-
-
 }

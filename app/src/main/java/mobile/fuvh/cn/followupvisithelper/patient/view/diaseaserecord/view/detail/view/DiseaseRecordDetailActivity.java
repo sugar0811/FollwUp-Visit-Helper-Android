@@ -8,6 +8,7 @@ import cn.wowjoy.commonlibrary.base.BaseTitleActivity;
 import mobile.fuvh.cn.followupvisithelper.R;
 import mobile.fuvh.cn.followupvisithelper.databinding.DiseaseRecordDetailActivityBinding;
 import mobile.fuvh.cn.followupvisithelper.patient.view.diaseaserecord.view.detail.viewmodel.DiseaseRecordDetailViewModel;
+import mobile.fuvh.cn.followupvisithelper.patient.view.pacs.PacsWebActivity;
 
 /**
  *
@@ -33,6 +34,9 @@ public class DiseaseRecordDetailActivity extends BaseTitleActivity<DiseaseRecord
         normalTitle("病程详情");
         binding.btConfirm.setOnClickListener((v)->{
             finish();
+        });
+        binding.tvPacs.setOnClickListener((v)->{
+            PacsWebActivity.launch(v.getContext(),"");
         });
     }
 

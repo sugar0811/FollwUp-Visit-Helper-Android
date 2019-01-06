@@ -12,24 +12,28 @@
 
             <LinearLayout
                 android:paddingBottom="@dimen/lay_50"
-                android:background="@color/C_FFFFFF"
+                android:background="@color/C_EFF5F8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
                 <LinearLayout
-                    android:padding="@dimen/lay_10"
+                    android:paddingTop="@dimen/lay_10"
+                    android:paddingBottom="@dimen/lay_10"
+                    android:paddingLeft="@dimen/lay_20"
+                    android:paddingRight="@dimen/lay_20"
+                    android:background="@color/C_FFFFFF"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <TextView
-                    android:textSize="@dimen/font_18"
+                    android:textSize="@dimen/font_16"
                     android:textColor="@color/C_222222"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="刘建国 11-07 病程记录" />
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/lay_10"
+                    android:layout_marginTop="@dimen/lay_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -59,10 +63,10 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="#DBDB70"
                     android:layout_marginTop="@dimen/lay_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/round_border_bg_aaaaaa"
                     android:orientation="horizontal"
                     android:paddingBottom="@dimen/lay_5"
                     android:paddingLeft="@dimen/lay_10"
@@ -102,37 +106,51 @@
 
                 </LinearLayout>
                 </LinearLayout>
+            <LinearLayout
+                android:layout_margin="@dimen/lay_10"
+                android:padding="@dimen/lay_5"
+                android:background="@drawable/card_selector"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
                     android:paddingLeft="@dimen/lay_10"
                     android:gravity="left|center"
-                    android:background="@color/C_F2F2F2"
                     android:layout_height="@dimen/lay_30"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="@dimen/lay_5"
                     android:text="查房沟通"
-                    android:textSize="@dimen/font_14" />
-
+                    android:textSize="@dimen/font_15" />
+                <View
+                    android:background="@drawable/dash_line_mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_1"/>
                 <TextView
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/top_bottom_border_bg"
                     android:padding="@dimen/lay_10"
                     android:text="患者咳嗽、咳痰较前减少，无明显胸闷、气促；无明显腹痛，腹胀不适" />
-
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="@dimen/lay_10"
+                    android:padding="@dimen/lay_5"
+                    android:background="@drawable/card_selector"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <TextView
                     android:paddingLeft="@dimen/lay_10"
                     android:gravity="left|center"
-                    android:background="@color/C_F2F2F2"
                     android:layout_height="@dimen/lay_30"
                     android:layout_width="match_parent"
                     android:text="查体体征"
-                    android:textSize="@dimen/font_14" />
-
+                    android:textSize="@dimen/font_15" />
+                <View
+                    android:background="@drawable/dash_line_mini"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/top_bottom_border_bg"
                     android:orientation="vertical"
                     android:padding="@dimen/lay_10">
 
@@ -142,6 +160,7 @@
                         android:text="查体，神清，精神可；体温 37.3摄氏度，心率70次/分，呼吸18次/分，血压141/71mmHg，24小时总入量2028ml，总出量1900ml，总尿量1900ml，皮肤巩膜无明显感染，肺部听诊呼吸音粗，可闻及湿啰音，心脏听诊未及病理性杂音，腹略膨，无压痛，无调痛，双下肢无明显凹陷性水肿，神经系统" />
 
                     <LinearLayout
+                        android:weightSum="4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/lay_10"
@@ -153,49 +172,57 @@
                             android:layout_weight="1"
                             android:paddingRight="@dimen/lay_5"
                             android:scaleType="fitXY"
-                            android:src="@drawable/default_pic" />
+                            android:src="@drawable/disea_test" />
 
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="@dimen/lay_60"
-                            android:layout_weight="1"
-                            android:paddingRight="@dimen/lay_5"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/default_pic" />
+                        <!--<ImageView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="@dimen/lay_60"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:paddingRight="@dimen/lay_5"-->
+                            <!--android:scaleType="fitXY"-->
+                            <!--android:src="@drawable/default_pic" />-->
 
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="@dimen/lay_60"
-                            android:layout_weight="1"
-                            android:paddingRight="@dimen/lay_5"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/default_pic" />
+                        <!--<ImageView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="@dimen/lay_60"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:paddingRight="@dimen/lay_5"-->
+                            <!--android:scaleType="fitXY"-->
+                            <!--android:src="@drawable/default_pic" />-->
 
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="@dimen/lay_60"
-                            android:layout_weight="1"
-                            android:paddingLeft="@dimen/lay_5"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/default_pic" />
+                        <!--<ImageView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="@dimen/lay_60"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:paddingLeft="@dimen/lay_5"-->
+                            <!--android:scaleType="fitXY"-->
+                            <!--android:src="@drawable/default_pic" />-->
 
                     </LinearLayout>
 
 
                 </LinearLayout>
-
+                </LinearLayout>
+            <LinearLayout
+                android:layout_margin="@dimen/lay_10"
+                android:padding="@dimen/lay_5"
+                android:background="@drawable/card_selector"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
                     android:paddingLeft="@dimen/lay_10"
                     android:gravity="left|center"
-                    android:background="@color/C_F2F2F2"
                     android:layout_height="@dimen/lay_30"
                     android:layout_width="match_parent"
                     android:text="辅助检查"
                     />
-
+                <View
+                    android:background="@drawable/dash_line_mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_1"/>
                 <FrameLayout
                     android:padding="@dimen/lay_10"
-                    android:background="@drawable/top_bottom_border_bg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -214,6 +241,7 @@
                             android:textSize="@dimen/font_15" />
 
                         <TextView
+                            android:layout_marginTop="@dimen/lay_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="中性粒细胞(%):73.3%," />
@@ -247,7 +275,6 @@
 
                 <FrameLayout
                     android:padding="@dimen/lay_10"
-                    android:background="@drawable/top_bottom_border_bg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -259,29 +286,23 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="肝肾脂糖电解质测定+心肌酶谱+镁"
+                            android:text="胸部CT"
                             android:textColor="@color/C_222222"
                             android:textSize="@dimen/font_15" />
 
                         <TextView
+                            android:layout_marginTop="@dimen/lay_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="总蛋白(TP)：48.9 mg/L，" />
-
+                            android:text="右侧髂窝-右腹膜增厚纤维化考虑，膀胱壁局部毛糙，较前片（2018-11-23）相仿。盆腔少量积液。 另见：双侧胸腔少量积液，左下肺部分膨胀不全，较前片稍好转。" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="白蛋白(Alb)：29.1 g/L" />
+                            android:id="@+id/tvPacs"
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="总胆红素(T-Bil)： 44 umol/L" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="直接胆红素(D-Bil)：26 umol/L" />
+                            android:paddingTop="@dimen/lay_10"
+                            android:textColor="@color/C_494949"
+                            android:text="查看原影像>>"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
 
                     </LinearLayout>
 
@@ -293,11 +314,17 @@
                         android:textColor="@color/C_222222"
                         android:textSize="@dimen/lay_15" />
                 </FrameLayout>
-
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="@dimen/lay_10"
+                android:padding="@dimen/lay_5"
+                android:background="@drawable/card_selector"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
                     android:paddingLeft="@dimen/lay_10"
                     android:gravity="left|center"
-                    android:background="@color/C_F2F2F2"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/lay_30"
                     android:text="医嘱调整" />
@@ -319,11 +346,12 @@
                     android:background="@color/C_FFFFFF"
                     android:text="新增 复方草珊瑚含片"
                     android:textColor="@color/C_222222" />
-
+            </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
         <Button
+            android:visibility="gone"
             android:id="@+id/btConfirm"
             android:layout_width="match_parent"
             android:layout_height="@dimen/lay_50"

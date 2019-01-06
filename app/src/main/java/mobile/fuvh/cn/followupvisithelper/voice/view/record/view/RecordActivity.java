@@ -10,10 +10,13 @@ import android.view.View;
 
 import java.lang.ref.WeakReference;
 import java.text.DecimalFormat;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import cn.wowjoy.commonlibrary.base.BaseActivity;
+import cn.wowjoy.commonlibrary.rxbus.RxBus;
+import cn.wowjoy.commonlibrary.utils.DateUtils;
 import cn.wowjoy.commonlibrary.utils.DialogUtils;
 import cn.wowjoy.commonlibrary.utils.RecorderUtil;
 import cn.wowjoy.commonlibrary.utils.SPUtils;
@@ -21,7 +24,9 @@ import cn.wowjoy.commonlibrary.utils.StatusBarUtil;
 import cn.wowjoy.commonlibrary.utils.ToastUtils;
 import cn.wowjoy.commonlibrary.widget.MDialog;
 import mobile.fuvh.cn.followupvisithelper.R;
+import mobile.fuvh.cn.followupvisithelper.constant.AppConstants;
 import mobile.fuvh.cn.followupvisithelper.databinding.VoiceRecordActivityBinding;
+import mobile.fuvh.cn.followupvisithelper.voice.bean.RecordBean;
 import mobile.fuvh.cn.followupvisithelper.voice.view.record.viewmodel.RecordViewModel;
 
 /**
@@ -84,6 +89,9 @@ public class RecordActivity extends BaseActivity<VoiceRecordActivityBinding,Reco
             record();
         });
         binding.ivDone.setOnClickListener((v)->{
+            String filePath = recorderUtil.getFilePath();
+            long timeInterval = recorderUtil.getTimeInterval();
+            RxBus.getInstance().post(AppConstants.RECORD_DONE_SEND,new RecordBean(filePath,"2B16床刘建国查房",DateUtils.toTime(timeInterval),DateUtils.getMonthDay(new Date()), (int) (timeInterval/1000)));
             ToastUtils.showShort(v.getContext(),"保存成功,可在录音记录中查看录音");
             finish();
         });

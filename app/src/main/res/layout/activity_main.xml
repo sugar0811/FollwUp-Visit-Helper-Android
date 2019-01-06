@@ -57,11 +57,12 @@
             android:layout_height="wrap_content" />
         <mobile.fuvh.cn.followupvisithelper.voice.widget.ItemReadPaperView
             android:id="@+id/mvPaper"
-            android:layout_marginTop="@dimen/font_19"
+            android:layout_marginTop="@dimen/lay_10"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/lay_116">
+            android:layout_height="wrap_content">
         </mobile.fuvh.cn.followupvisithelper.voice.widget.ItemReadPaperView>
         <TextView
+            android:visibility="gone"
             android:text="您可以这样跟我说:"
             android:id="@+id/tvContent"
             android:layout_marginVertical="@dimen/lay_10"
@@ -72,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
          <android.support.v7.widget.RecyclerView
+             android:layout_marginTop="@dimen/lay_10"
              android:id="@+id/rvTipMsg"
              app:layoutManager="@{LayoutManagers.linearL()}"
              android:layout_width="match_parent"
@@ -120,9 +122,8 @@
                 android:id="@+id/wvWave">
             </com.dnkilic.waveform.WaveView>
            <LinearLayout
-
+                android:visibility="gone"
                android:id="@+id/llBottomRoot"
-               android:visibility="gone"
                android:padding="10dp"
                android:layout_alignParentBottom="true"
                android:orientation="vertical"
@@ -147,8 +148,13 @@
                 android:gravity="bottom"
                 android:orientation="horizontal"
                 >
-
+                <ImageView
+                    android:id="@+id/ivSwitchVoice"
+                    android:src="@drawable/voice_record"
+                    android:layout_width="@dimen/lay_40"
+                    android:layout_height="@dimen/lay_40" />
                 <EditText
+                    android:textColor="@color/C_333333"
                     android:id="@+id/et_message"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

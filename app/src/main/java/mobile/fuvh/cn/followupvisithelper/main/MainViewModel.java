@@ -8,10 +8,13 @@ import android.view.View;
 
 import cn.wowjoy.commonlibrary.adapter.CommonAdapter;
 import mobile.fuvh.cn.followupvisithelper.R;
+import mobile.fuvh.cn.followupvisithelper.collect.CollectActivity;
+import mobile.fuvh.cn.followupvisithelper.contact.ContactsActivity;
 import mobile.fuvh.cn.followupvisithelper.databinding.ItemDrawerMenuBinding;
 import mobile.fuvh.cn.followupvisithelper.databinding.ItemPopMenuBinding;
 import mobile.fuvh.cn.followupvisithelper.databinding.ItemTipMsgBinding;
 import mobile.fuvh.cn.followupvisithelper.patient.view.list.view.PatientListActivity;
+import mobile.fuvh.cn.followupvisithelper.setting.view.SettingActivity;
 import mobile.fuvh.cn.followupvisithelper.voice.bean.DrawerMenuBean;
 import mobile.fuvh.cn.followupvisithelper.voice.view.record.view.list.view.RecordListActivity;
 
@@ -36,8 +39,17 @@ public class MainViewModel extends AndroidViewModel{
                     case 0:
                         PatientListActivity.launch(v.getContext());
                         break;
+                    case 1:
+                        ContactsActivity.launch(v.getContext());
+                        break;
                     case 2:
                         RecordListActivity.launch(v.getContext());
+                        break;
+                    case 3:
+                        CollectActivity.launch(v.getContext());
+                        break;
+                    case 4:
+                        SettingActivity.launch(v.getContext());
                         break;
                     default:
                         break;
@@ -65,10 +77,10 @@ public class MainViewModel extends AndroidViewModel{
 
     private ObservableArrayList<DrawerMenuBean> tipMsgData() {
         ObservableArrayList<DrawerMenuBean> menus = new ObservableArrayList<>();
-//        menus.add(new DrawerMenuBean("查看刘建国的病程记录",R.drawable.tip_disease));
-//        menus.add(new DrawerMenuBean("查看刘建国的随访记录",R.drawable.tip_follow_up));
-        menus.add(new DrawerMenuBean("查看刘建国的白细胞",R.drawable.tip_news));
-        menus.add(new DrawerMenuBean("查看刘建国的病例",R.drawable.tip_call));
+        menus.add(new DrawerMenuBean("开始查房",R.drawable.tip_disease));
+        menus.add(new DrawerMenuBean("扫一扫",R.drawable.tip_follow_up));
+        menus.add(new DrawerMenuBean("录音",R.drawable.tip_news));
+//        menus.add(new DrawerMenuBean("查看刘建国的病例",R.drawable.tip_call));
         return menus;
     }
 

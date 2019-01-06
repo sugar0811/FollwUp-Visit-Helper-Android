@@ -1,9 +1,12 @@
 package mobile.fuvh.cn.followupvisithelper.main;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.v4.widget.NestedScrollView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -27,6 +30,7 @@ import java.util.LinkedHashMap;
 
 import cn.wowjoy.commonlibrary.adapter.CommonAdapter;
 import cn.wowjoy.commonlibrary.base.BaseActivity;
+import cn.wowjoy.commonlibrary.rxbus.RxBus;
 import cn.wowjoy.commonlibrary.utils.DateUtils;
 import cn.wowjoy.commonlibrary.utils.DensityUtil;
 import cn.wowjoy.commonlibrary.utils.InputTools;
@@ -34,12 +38,16 @@ import cn.wowjoy.commonlibrary.utils.StatusBarUtil;
 import cn.wowjoy.commonlibrary.utils.ToastUtils;
 import cn.wowjoy.commonlibrary.widget.MPopupwindow;
 import cn.wowjoy.commonlibrary.widget.titlebar.TitleBar;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 import mobile.fuvh.cn.followupvisithelper.R;
+import mobile.fuvh.cn.followupvisithelper.constant.AppConstants;
 import mobile.fuvh.cn.followupvisithelper.databinding.ActivityMainBinding;
 import mobile.fuvh.cn.followupvisithelper.databinding.ItemPopMenuBinding;
 import mobile.fuvh.cn.followupvisithelper.msg.view.MessageActivity;
 import mobile.fuvh.cn.followupvisithelper.patient.view.advice.view.AdviceListActivity;
 import mobile.fuvh.cn.followupvisithelper.voice.bean.DrawerMenuBean;
+import mobile.fuvh.cn.followupvisithelper.voice.bean.RecordBean;
 import mobile.fuvh.cn.followupvisithelper.voice.helper.ChatHelper;
 import mobile.fuvh.cn.followupvisithelper.voice.helper.JsonParser;
 import mobile.fuvh.cn.followupvisithelper.voice.helper.PickImageHelper;
@@ -52,6 +60,7 @@ import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemDiseaseRecordView;
 import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemImageView;
 import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemReadPaperView;
 import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemVoice2TextView;
+import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemVoiceRecordView;
 
 /**
  * @author sugar
@@ -67,6 +76,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
      */
     private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
 
+    public static void launch(Context context){
+        context.startActivity(new Intent(context,MainActivity.class));
+    }
 
     protected void initData() {
         VoiceHelper.init(this, new RecognizerDialogListener() {
@@ -81,6 +93,20 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
             }
         });
         VoiceHelper.startSpeaking("", null);
+
+
+        RxBus.getInstance().tObservable(AppConstants.RECORD_DONE_SEND, RecordBean.class).
+                subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<RecordBean>() {
+            @Override
+            public void accept(RecordBean o) throws Exception {
+                ItemVoiceRecordView itemVoiceRecordView = new ItemVoiceRecordView(MainActivity.this);
+                itemVoiceRecordView.setParams(o);
+                addBottomView(itemVoiceRecordView);
+            }
+        });
+
+
     }
 
     protected void initView(Bundle savedInstanceState) {
@@ -198,11 +224,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     private void content() {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         binding.ivInput.setOnClickListener((v) -> {
-            binding.llBottomRoot.setVisibility(View.VISIBLE);
-            binding.ivInput.setVisibility(View.GONE);
-            binding.ivVoice.setVisibility(View.GONE);
+            switchText();
             InputTools.showSoftInputFromWindow(MainActivity.this, binding.etMessage);
             Log.e("time", DateUtils.getCurrFullTimeData() + "..");
+        });
+        binding.ivSwitchVoice.setOnClickListener((v)->{
+                switchVoice();
         });
         CommonAdapter inputTipAdapter = viewModel.getInputTipAdapter();
         inputTipAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener() {
@@ -234,9 +261,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
             String text = binding.etMessage.getText().toString();
             if (!TextUtils.isEmpty(text)) {
                 InputTools.HideKeyboard(binding.etMessage);
-                binding.llBottomRoot.setVisibility(View.GONE);
-                binding.ivInput.setVisibility(View.VISIBLE);
-                binding.ivVoice.setVisibility(View.VISIBLE);
+                switchVoice();
                 binding.etMessage.setText("");
                 ItemVoice2TextView rightTextView = ChatHelper.getRightTextView(v.getContext(), text);
                 addBottomView(rightTextView);
@@ -256,21 +281,40 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
             public void onItemClick(View v, int position) {
                 switch (position) {
                     case 0:
-                        ItemChartView itemChartView = new ItemChartView(v.getContext());
-                        binding.llScrollRoot.addView(itemChartView, -1);
+                        addBottomView(new ItemReadPaperView(v.getContext()).wardRoundType());
                         break;
                     case 1:
-                        ItemDiseaseCaseView itemDiseaseCaseView = new ItemDiseaseCaseView(v.getContext());
-                        binding.llScrollRoot.addView(itemDiseaseCaseView, -1);
+                        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        String mPhotoPath = PickImageHelper.getPhotoPath();
+                        Uri imguri = Uri.fromFile(new File(mPhotoPath));
+                        camera.putExtra(MediaStore.EXTRA_OUTPUT, imguri);
+                        MainActivity.this.startActivityForResult(camera, AppConstants.CAMERA_WITH_DATA);
                         break;
+                    case 2:
+                        RecordActivity.launch(v.getContext());
+                        break;
+
                     default:
                         break;
                 }
-                scrollToBottom(binding.nsScroll);
+
             }
         });
         binding.rvTipMsg.setAdapter(tipMsgAdapter);
 
+    }
+
+    private void switchText() {
+        binding.llBottomRoot.setVisibility(View.VISIBLE);
+        binding.ivInput.setVisibility(View.GONE);
+        binding.ivVoice.setVisibility(View.GONE);
+    }
+
+    private void switchVoice() {
+        binding.llBottomRoot.setVisibility(View.GONE);
+        binding.ivInput.setVisibility(View.VISIBLE);
+        binding.ivVoice.setVisibility(View.VISIBLE);
+        InputTools.HideKeyboard(binding.etMessage);
     }
 
     public static void scrollToBottom(final NestedScrollView scrollView) {

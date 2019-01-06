@@ -44,7 +44,6 @@ public class RecordListViewModel extends AndroidViewModel{
                 RecordBean recordBean = new RecordBean();
                 String filename = subFile[iFileLength].getName();
                 recordBean.setRecordName(filename);
-                Log.e("filename",filename+"..");
                 long aLong = SPUtils.getLong(filename, 0);
                 if(aLong != 0){
                     recordBean.setRecordDuration(DateUtils.toTime(aLong));

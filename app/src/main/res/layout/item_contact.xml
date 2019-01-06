@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.andrid.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="mobile.fuvh.cn.followupvisithelper.bean.SimpleBean"/>
+    </data>
+    <FrameLayout
+        android:background="@drawable/selector_white_item_clickable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/lay_10">
+        <ImageView
+            android:layout_width="@dimen/lay_60"
+            android:layout_height="@dimen/lay_60"
+            android:src="@drawable/male" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/lay_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/lay_10"
+                android:text="@{item.simpleField1}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.simpleField2}" />
+        </LinearLayout>
+    </LinearLayout>
+        <View
+            android:background="@color/C_AAAAAA"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1px">
+        </View>
+    </FrameLayout>
+</layout>

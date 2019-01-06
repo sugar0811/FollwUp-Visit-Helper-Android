@@ -35,9 +35,11 @@ public class MessageViewModel extends AndroidViewModel{
 
 
     private void makeData() {
-       msgs.add(new MessageItem("1501","刘建国","2018-09-11 13:00"));
-       msgs.add(new MessageItem("1502","李星","2018-09-12 15:00"));
-       msgs.add(new MessageItem("1503","胡火","2018-08-11 13:00"));
+       msgs.add(new MessageItem("黄浩杰医生的抗生素使用审批","","18/09/11 13:00"));
+       msgs.add(new MessageItem("5C15床娄建武的病程待确认","","18/09/12 15:00",true));
+       msgs.add(new MessageItem("黄浩杰的抗生素使用审批","","18/08/11 13:00"));
+       msgs.add(new MessageItem("5C15床娄建武的病程待确认","","18/07/11 13:00",true));
+       msgs.add(new MessageItem("黄浩杰的抗生素使用审批","","18/06/10 13:00"));
     }
 
 

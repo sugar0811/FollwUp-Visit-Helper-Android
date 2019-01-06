@@ -6,34 +6,43 @@
         <variable
             name="item"
             type="mobile.fuvh.cn.followupvisithelper.msg.bean.MessageItem" />
-
+        <import type="android.view.View"/>
     </data>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/lay_60">
     <LinearLayout
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/lay_57"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/lay_10"
-        android:paddingBottom="@dimen/lay_10"
-        android:paddingRight="@dimen/lay_20"
-        android:paddingLeft="@dimen/lay_10">
+        android:paddingRight="@dimen/lay_10"
+        android:paddingLeft="@dimen/lay_10"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.number}"
+            android:text="@{item.name}"
             android:textColor="@color/C_333333"
-            android:textSize="@dimen/font_16" />
-
+            android:textSize="@dimen/font_14" />
+        <TextView
+            android:layout_marginLeft="@dimen/lay_5"
+            android:visibility='@{item.isHaste?View.VISIBLE:View.INVISIBLE}'
+            android:id="@+id/tvHaste"
+            android:gravity="center"
+            android:textColor="@color/C_FFFFFF"
+            android:background="@drawable/circle_del"
+            android:textSize="@dimen/font_12"
+            android:text="急"
+            android:layout_width="@dimen/lay_20"
+            android:layout_height="@dimen/lay_20" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/lay_10"
-            android:text="@{item.name}"
             android:textColor="@color/C_333333"
             android:textSize="@dimen/font_16" />
 

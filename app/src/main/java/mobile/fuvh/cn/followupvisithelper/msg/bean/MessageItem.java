@@ -12,6 +12,22 @@ public class MessageItem {
     private String name;
     private String number;
     private String time;
+    private boolean isHaste;
+
+    public boolean isHaste() {
+        return isHaste;
+    }
+
+    public MessageItem(String name, String number, String time, boolean isHaste) {
+        this.name = name;
+        this.number = number;
+        this.time = time;
+        this.isHaste = isHaste;
+    }
+
+    public void setHaste(boolean haste) {
+        isHaste = haste;
+    }
 
     public MessageItem() {
     }

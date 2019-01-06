@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/C_F7F7F7"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="21dp"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:maxLength="11"
+            android:background="@null"
+            android:hint="请输入账号"
+            android:inputType="number"
+            android:paddingBottom="@dimen/lay_10"
+            android:paddingTop="@dimen/lay_10"
+            android:textColorHint="@color/C_CBCBCB" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/C_AAAAAA">
+        </View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/etPwd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:inputType="number"
+            android:paddingBottom="@dimen/lay_10"
+            android:paddingTop="@dimen/lay_10"
+            android:textColorHint="@color/C_CBCBCB"
+            />
+        <!--<Button-->
+        <!--android:id="@+id/bt_security_code"-->
+        <!--android:background="@drawable/login_code_selector"-->
+        <!--android:textColor="@color/themeColor"-->
+        <!--android:textSize="@dimen/login_key"-->
+        <!--android:clickable="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="28dp"-->
+        <!--android:enabled="true"-->
+        <!--android:text="@string/gain_code"-->
+        <!--/>-->
+        <!--// 获取验证码-->
+        <!--重新获取(60)-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/C_AAAAAA">
+        </View>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginLeft="@dimen/lay_20"
+        android:layout_marginRight="@dimen/lay_20"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_bt_normal"
+        android:clickable="true"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/lay_16" />
+
+
+</LinearLayout>
+</layout>

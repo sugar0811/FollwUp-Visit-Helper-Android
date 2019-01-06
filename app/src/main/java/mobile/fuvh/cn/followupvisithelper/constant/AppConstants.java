@@ -27,4 +27,5 @@ public interface AppConstants {
     String REPORT_EXAM_BEAN = "report_exam_bean";
     String REPORT_TEST_BEAN = "report_test_bean";
     String BASE_PATH_PIC = Environment.getExternalStorageDirectory().getPath() + "/follow/pic/";
+    int RECORD_DONE_SEND = 1004;
 }

@@ -21,7 +21,7 @@ import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemVoice2TextView;
 public class ChatHelper {
 
     public static String[] keyWorkCase = {"病例","病历"};
-    public static String keyWorkZhibiao = "白细胞";
+    public static String[] keyWorkZhibiao = {"白细胞","红细胞","细胞","检验"};
     public static String keyWorkWardRound = "查房";
     public static String[] keyWorkDiseaseRecord = {"病程","病程记录"};
 
@@ -30,7 +30,7 @@ public class ChatHelper {
         if(!TextUtils.isEmpty(question)){
             if(isContain(question,keyWorkCase)){
                 answerView = new ItemDiseaseCaseView(context);
-            }else if(question.contains(keyWorkZhibiao)){
+            }else if(isContain(question,keyWorkZhibiao)){
                 answerView = new ItemChartView(context);
             }else if(isContain(question,keyWorkDiseaseRecord)){
                 answerView = new ItemDiseaseRecordView(context);

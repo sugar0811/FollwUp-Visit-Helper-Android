@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="right"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_marginTop="@dimen/lay_20"
+            android:layout_marginRight="@dimen/lay_10"
+            android:padding="@dimen/lay_10"
+            android:background="@drawable/round_border_bg_aaaaaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="@dimen/lay_30"
+            android:layout_height="@dimen/lay_30"
+            android:layout_gravity="center"
+            android:src="@drawable/play" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDurationTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 : 24"
+                android:textColor="@color/C_222222" />
+
+            <TextView
+                android:id="@+id/tvDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018.12.01 16:40" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/lay_20"
+            android:text="20145KB" />
+        </LinearLayout>
+
+</LinearLayout>
+</layout>

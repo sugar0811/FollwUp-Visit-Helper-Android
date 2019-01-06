@@ -63,7 +63,7 @@ public class PickImageHelper {
 
     }
 
-    private static String getPhotoPath() {
+    public static String getPhotoPath() {
         return AppConstants.BASE_PATH_PIC + DateUtils.getCurrFullTimeDataSecond() + ".jpg";
     }
 

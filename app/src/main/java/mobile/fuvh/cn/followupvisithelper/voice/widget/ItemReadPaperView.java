@@ -3,9 +3,11 @@ package mobile.fuvh.cn.followupvisithelper.voice.widget;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,6 +38,7 @@ public class ItemReadPaperView extends IChatView{
     private TextView mTvTitle;
     private TextView mTvContent;
     private FrameLayout mFlPickPic;
+    private TextView mTvOtherTip;
 
     public ItemReadPaperView(Context context) {
         this(context,null);
@@ -64,6 +67,7 @@ public class ItemReadPaperView extends IChatView{
         mTvTitle = findViewById(R.id.tvTitle);
         mFlPickPic = findViewById(R.id.flPickPic);
         mTvContent = findViewById(R.id.tvContent);
+        mTvOtherTip = findViewById(R.id.tvOtherTip);
         ImageView ivPlay = findViewById(R.id.ivPlay);
         ivPlay.setImageResource(R.drawable.animation_play_voice);
         mAnimationDrawable = (AnimationDrawable) ivPlay.getDrawable();
@@ -73,6 +77,7 @@ public class ItemReadPaperView extends IChatView{
     public ItemReadPaperView wardRoundType(){
         title("2B16床 刘建国");
         content(DataManager.wardRoundData);
+        mTvOtherTip.setVisibility(GONE);
         mFlPickPic.setVisibility(VISIBLE);
         mFlPickPic.setOnClickListener((v)->{
             PickImageHelper.pickImage(v.getContext());
@@ -88,10 +93,19 @@ public class ItemReadPaperView extends IChatView{
         }
 
         if(!VoiceHelper.isSpeaking()){
-            VoiceHelper.startSpeaking(mTvContent.getText().toString(), mSynthesizerListener);
+            VoiceHelper.startSpeaking(getNews(), mSynthesizerListener);
         }else{
             pause();
         }
+    }
+
+    @NonNull
+    private String getNews() {
+        String otherTip = "";
+        if(mTvOtherTip.getVisibility() != View.GONE){
+            otherTip = mTvOtherTip.getText().toString();
+        }
+        return mTvTitle.getText().toString() + ","+mTvContent.getText().toString()+otherTip;
     }
 
     private void resume() {
