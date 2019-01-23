@@ -91,7 +91,7 @@ public class RecordActivity extends BaseActivity<VoiceRecordActivityBinding,Reco
         binding.ivDone.setOnClickListener((v)->{
             String filePath = recorderUtil.getFilePath();
             long timeInterval = recorderUtil.getTimeInterval();
-            RxBus.getInstance().post(AppConstants.RECORD_DONE_SEND,new RecordBean(filePath,"2B16床刘建国查房",DateUtils.toTime(timeInterval),DateUtils.getMonthDay(new Date()), (int) (timeInterval/1000)));
+            RxBus.getInstance().post(AppConstants.RECORD_DONE_SEND,new RecordBean(filePath,"2B16床刘建国查房",DateUtils.toTime(timeInterval),DateUtils.getMonthDay(new Date()), (int) (timeInterval)));
             ToastUtils.showShort(v.getContext(),"保存成功,可在录音记录中查看录音");
             finish();
         });

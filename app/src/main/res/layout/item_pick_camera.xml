@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <data>
+        <variable
+            name="item"
+            type="String"/>
+    </data>
     <FrameLayout
-        android:layout_margin="@dimen/lay_10"
+        android:layout_marginLeft="@dimen/lay_5"
+        android:layout_marginRight="@dimen/lay_5"
+        android:layout_marginTop="@dimen/lay_10"
+        android:layout_marginBottom="@dimen/lay_10"
         android:background="@drawable/card_selector"
-        android:layout_width="@dimen/lay_100"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/lay_100">
         <mobile.fuvh.cn.followupvisithelper.voice.widget.RoundImageView
             android:id="@+id/ivPic"
             app:x_radius="@dimen/lay_6"
             app:y_radius="@dimen/lay_6"
+            app:picPath="@{item}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:maxWidth="200.0dip"
-            android:maxHeight="230.0dip"/>
+            android:maxWidth="100.0dip"
+            android:maxHeight="100.0dip"/>
     </FrameLayout>
 </layout>

@@ -8,9 +8,9 @@ import mobile.fuvh.cn.followupvisithelper.R;
 import mobile.fuvh.cn.followupvisithelper.voice.widget.IChatView;
 import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemChartView;
 import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemDiseaseCaseView;
-import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemDiseaseRecordView;
-import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemReadPaperView;
+import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemDiseaseDetailView;
 import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemVoice2TextView;
+import mobile.fuvh.cn.followupvisithelper.voice.widget.ItemWardRoundView;
 
 /**
  *
@@ -33,9 +33,9 @@ public class ChatHelper {
             }else if(isContain(question,keyWorkZhibiao)){
                 answerView = new ItemChartView(context);
             }else if(isContain(question,keyWorkDiseaseRecord)){
-                answerView = new ItemDiseaseRecordView(context);
+                answerView = new ItemDiseaseDetailView(context);
             } else if(question.contains(keyWorkWardRound)){
-                answerView = new ItemReadPaperView(context).wardRoundType();
+                answerView = new ItemWardRoundView(context);
             } else{
                 ItemVoice2TextView itemVoice2TextView = new ItemVoice2TextView(context);
                 itemVoice2TextView.text(CommonUtils.getString(R.string.chat_tip_none));

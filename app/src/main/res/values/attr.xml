@@ -11,4 +11,13 @@
         <attr name="x_radius" format="dimension" />
         <attr name="y_radius" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="ReadPaperView">
+        <attr name="icon" format="reference" />
+        <attr name="title" format="string" />
+        <attr name="content" format="string" />
+        <attr name="childLeft" format="string" />
+        <attr name="childRight" format="string" />
+        <attr name="childImg" format="reference" />
+        <attr name="isNeedLine" format="boolean" />
+    </declare-styleable>
 </resources>

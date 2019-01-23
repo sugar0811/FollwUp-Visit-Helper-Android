@@ -11,7 +11,6 @@ import mobile.fuvh.cn.followupvisithelper.R;
 import mobile.fuvh.cn.followupvisithelper.collect.CollectActivity;
 import mobile.fuvh.cn.followupvisithelper.contact.ContactsActivity;
 import mobile.fuvh.cn.followupvisithelper.databinding.ItemDrawerMenuBinding;
-import mobile.fuvh.cn.followupvisithelper.databinding.ItemPopMenuBinding;
 import mobile.fuvh.cn.followupvisithelper.databinding.ItemTipMsgBinding;
 import mobile.fuvh.cn.followupvisithelper.patient.view.list.view.PatientListActivity;
 import mobile.fuvh.cn.followupvisithelper.setting.view.SettingActivity;
@@ -84,19 +83,19 @@ public class MainViewModel extends AndroidViewModel{
         return menus;
     }
 
-    public CommonAdapter<DrawerMenuBean,ItemPopMenuBinding> getDeptAdapter() {
-        return new CommonAdapter<DrawerMenuBean, ItemPopMenuBinding>(R.layout.item_pop_menu, moreData()) {
-        };
+//    public CommonAdapter<DrawerMenuBean,ItemPopMenuBinding> getDeptAdapter() {
+//        return new CommonAdapter<DrawerMenuBean, ItemPopMenuBinding>(R.layout.item_pop_menu, moreData()) {
+//        };
+//
+//    }
 
-    }
-
-    private ObservableArrayList<DrawerMenuBean> moreData() {
-        ObservableArrayList<DrawerMenuBean> menus = new ObservableArrayList<>();
-        menus.add(new DrawerMenuBean("录音",R.drawable.more_record));
-        menus.add(new DrawerMenuBean("扫一扫",R.drawable.more_scan));
-        menus.add(new DrawerMenuBean("帮助",R.drawable.more_help));
-        return menus;
-    }
+//    private ObservableArrayList<DrawerMenuBean> moreData() {
+//        ObservableArrayList<DrawerMenuBean> menus = new ObservableArrayList<>();
+////        menus.add(new DrawerMenuBean("录音",R.drawable.more_record));
+////        menus.add(new DrawerMenuBean("扫一扫",R.drawable.more_scan));
+////        menus.add(new DrawerMenuBean("帮助",R.drawable.more_help));
+//        return menus;
+//    }
 
     public CommonAdapter getInputTipAdapter() {
         return new CommonAdapter(R.layout.item_hollow_tip,makeInputTipData()) {

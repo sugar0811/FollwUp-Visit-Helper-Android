@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/lay_10"
+            android:id="@+id/llDiseaseRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_selector"
+            android:orientation="vertical"
+            android:padding="@dimen/lay_10">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <ImageView
+                    android:id="@+id/ivCollect"
+                    android:layout_width="@dimen/lay_25"
+                    android:layout_height="@dimen/lay_25"
+                    android:layout_gravity="right"
+                    android:layout_margin="@dimen/lay_5"
+                    android:src="@drawable/collect_selector" />
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/lay_5"
+                    android:layout_marginRight="@dimen/lay_45"
+                    android:id="@+id/ivShare"
+                    android:layout_width="@dimen/lay_28"
+                    android:layout_height="@dimen/lay_28"
+                    android:layout_gravity="right"
+                    android:src="@drawable/share" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="刘建国  2B16床"
+                        android:textColor="@color/C_333333"
+                        android:textSize="@dimen/font_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/lay_5"
+                        android:text="诊断：肠息肉，胃溃疡" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <View
+                android:layerType="software"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_1"
+                android:layout_marginBottom="@dimen/lay_10"
+                android:layout_marginTop="@dimen/lay_10"
+                android:background="@drawable/dash_line_mini" />
+
+            <mobile.fuvh.cn.followupvisithelper.voice.widget.ReadPaperView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:content="2B16床刘建国，白细胞49g/L上升，总胆红素 55-
+umol/L 上升；值班医生张益生开临时医嘱头孢克洛缓释胶囊。"
+                app:icon="@drawable/goutong_"
+                app:title="查房沟通"></mobile.fuvh.cn.followupvisithelper.voice.widget.ReadPaperView>
+            <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<TextView-->
+            <!--android:drawablePadding="@dimen/lay_10"-->
+            <!--android:drawableLeft="@drawable/goutong_"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/lay_30"-->
+            <!--android:gravity="left|center"-->
+            <!--android:text="查房沟通"-->
+            <!--android:textSize="@dimen/font_15" />-->
+            <!--<ImageView-->
+            <!--android:layout_gravity="right"-->
+            <!--android:id="@+id/ivPLayChaFang"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+            <!--</FrameLayout>-->
+            <!--<TextView-->
+            <!--android:textColor="@color/C_333333"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="患者咳嗽、咳痰较前减少，无明显胸闷、气促；无明显腹痛，腹胀不适" />-->
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/llDetailMsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+
+                    <mobile.fuvh.cn.followupvisithelper.voice.widget.ReadPaperView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:content="查体，神清，精神可；体温 37.3摄氏度，心率70次/分，呼吸18次/分，血压141/71mmHg，24小时总入量2028ml，总出量1900ml，总尿量1900ml，皮肤巩膜无明显感染，肺部听诊呼吸音粗，可闻及湿啰音，心脏听诊未及病理性杂音，腹略膨，无压痛，无调痛，双下肢无明显凹陷性水肿，神经系统"
+                        app:icon="@drawable/tizheng_"
+                        app:childImg="@drawable/disea_test"
+                        app:title="查体体征"/>
+
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="@dimen/lay_60"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:paddingRight="@dimen/lay_5"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@drawable/default_pic" />-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="@dimen/lay_60"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:paddingRight="@dimen/lay_5"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@drawable/default_pic" />-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="@dimen/lay_60"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:paddingLeft="@dimen/lay_5"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@drawable/default_pic" />-->
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <mobile.fuvh.cn.followupvisithelper.voice.widget.ReadPaperView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:content="右侧髂窝-右腹膜增厚纤维化考虑，膀胱壁局部毛糙，较前片（2018-11-23）相仿。盆腔少量积液。 另见：双侧胸腔少量积液，左下肺部分膨胀不全，较前片稍好转。"
+                        app:icon="@drawable/fuzhu_"
+                        app:childLeft="胸部CT"
+                        app:isNeedLine="false"
+                        app:childRight="2018/11/01"
+                        app:title="辅助检查"/>
+                    <TextView
+                        android:id="@+id/tvPacs"
+                        android:gravity="right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="查看原影像>>"
+                        android:textColor="@color/C_494949" />
+
+                    <View
+                        android:layerType="software"
+                        android:layout_gravity="bottom"
+                        android:id="@+id/vLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_1"
+                        android:layout_marginTop="@dimen/lay_10"
+                        android:background="@drawable/dash_line_mini" />
+                </LinearLayout>
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/lay_5"
+                            android:text="血常规+超敏CRP（快速病）（病房）"
+                            android:textColor="@color/C_222222"
+                            android:textSize="@dimen/font_15" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/lay_5"
+                            android:text="中性粒细胞(%):73.3%,"
+                            android:textColor="@color/C_333333" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="红细胞计数3.75*10E12/L"
+                            android:textColor="@color/C_333333" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="血红蛋白: 120/L"
+                            android:textColor="@color/C_333333" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="C反应蛋白： 28.9mg/L"
+                            android:textColor="@color/C_333333" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="2018/10/31"
+                        android:textColor="@color/C_222222"
+                        android:textSize="@dimen/lay_15" />
+
+                </FrameLayout>
+
+
+                    <mobile.fuvh.cn.followupvisithelper.voice.widget.ReadPaperView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:content="患者白蛋白偏低，今加用人血白蛋白补充，剩余治疗同前，续关。已审核护理计划并同意目前处理措施。"
+                        app:icon="@drawable/yijian_"
+                        app:title="治疗意见"/>
+
+
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/tvClose"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:text="收缩"-->
+                <!--android:gravity="right"-->
+                <!--android:textColor="@color/C_494949"-->
+                <!--android:drawableRight="@drawable/top"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvExpand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:drawableRight="@drawable/down_expand"
+                android:gravity="right"
+                android:text="展开"
+                android:textColor="@color/C_494949" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

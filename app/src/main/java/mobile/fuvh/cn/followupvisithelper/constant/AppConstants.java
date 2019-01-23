@@ -23,6 +23,7 @@ public interface AppConstants {
     public static final int PHOTO_PICKED_WITH_PATH = 3022;
     public static final int CAMERA_WITH_DATA = 3023;
     String RECORD_DURATION = "record_duration";
+    int POST_PACS_STATE = 101;
     String REPORT_TYPE = "report_type";
     String REPORT_EXAM_BEAN = "report_exam_bean";
     String REPORT_TEST_BEAN = "report_test_bean";

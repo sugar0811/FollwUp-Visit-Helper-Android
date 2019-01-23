@@ -1,9 +1,9 @@
 package mobile.fuvh.cn.followupvisithelper.patient.view.pacs;
 
-import android.content.DialogInterface;
+import android.arch.lifecycle.ViewModel;
 import android.content.Intent;
+import android.databinding.ViewDataBinding;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -17,16 +17,19 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.IAgentWebSettings;
+import com.yzq.zxinglibrary.android.CaptureActivity;
+import com.yzq.zxinglibrary.common.Constant;
 
-import cn.wowjoy.commonlibrary.app.Constans;
 import cn.wowjoy.commonlibrary.base.BaseActivity;
-import cn.wowjoy.commonlibrary.utils.SPUtils;
+import cn.wowjoy.commonlibrary.utils.ToastUtils;
+import cn.wowjoy.commonlibrary.widget.titlebar.TitleBar;
 import mobile.fuvh.cn.followupvisithelper.R;
 import mobile.fuvh.cn.followupvisithelper.patient.view.report.chart.widget.WebLayout;
+
+import static mobile.fuvh.cn.followupvisithelper.main.MainActivity.REQUEST_CODE_SCAN;
 
 /**
  * Created by cenxiaozhong on 2017/5/26.
@@ -36,13 +39,13 @@ import mobile.fuvh.cn.followupvisithelper.patient.view.report.chart.widget.WebLa
  * <p>
  */
 
-public abstract class BaseWebActivity extends BaseActivity {
+public abstract class BaseWebActivity<DB extends ViewDataBinding, VM extends ViewModel> extends BaseActivity<DB,VM> {
 
-
+    public static String PACS_TAG = "影像登录";
     protected AgentWeb mAgentWeb;
     private LinearLayout mLinearLayout;
     private Toolbar mToolbar;
-    private TextView mTitleTextView;
+//    private TextView mTitleTextView;
     private AlertDialog mAlertDialog;
 
     @Override
@@ -53,24 +56,17 @@ public abstract class BaseWebActivity extends BaseActivity {
     @Override
     public void init(@Nullable Bundle savedInstanceState) {
         mLinearLayout = (LinearLayout) this.findViewById(R.id.container);
-        mToolbar = (Toolbar) this.findViewById(R.id.toolbar);
-        mToolbar.setTitleTextColor(Color.WHITE);
-        mToolbar.setTitle(setTitle());
-        mTitleTextView = (TextView) this.findViewById(R.id.toolbar_title);
-        this.setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null)
-            // Enable the Up button
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//        mTitleTextView = (TextView) this.findViewById(R.id.toolbar_title);
+        TitleBar titleBar = this.findViewById(R.id.tbTitle);
+        titleBar.setTitle("查看影像");
+        titleBar.setLeftBack(this);
+        titleBar.addAction(new TitleBar.ImageAction(R.drawable.scan) {
             @Override
-            public void onClick(View v) {
-
-//                showDialog();
-                BaseWebActivity.this.finish();
+            public void performAction(View view) {
+                Intent intent = new Intent(BaseWebActivity.this, CaptureActivity.class);
+                startActivityForResult(intent, REQUEST_CODE_SCAN);
             }
         });
-
-
         long p = System.currentTimeMillis();
         mAgentWeb = AgentWeb.with(this)//
                 .setAgentWebParent(mLinearLayout, new LinearLayout.LayoutParams(-1, -1))//
@@ -78,7 +74,6 @@ public abstract class BaseWebActivity extends BaseActivity {
                 .setAgentWebWebSettings(getSettings())
 //                .defaultProgressBarColor()
 //                .setReceivedTitleCallback(mCallback)
-                .additionalHttpHeader("Authorization", "Bearer " + SPUtils.getString(Constans.GATEWAY_TOKEN, ""))
                 .setWebChromeClient(mWebChromeClient)
                 .setWebViewClient(mWebViewClient)
                 .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
@@ -89,7 +84,6 @@ public abstract class BaseWebActivity extends BaseActivity {
         //mAgentWeb.getLoader().loadUrl(getUrl());
         long n = System.currentTimeMillis();
         Log.i("Info", "init used time:" + (n - p));
-
 
     }
 
@@ -129,41 +123,6 @@ public abstract class BaseWebActivity extends BaseActivity {
     public abstract String setTitle();
 
 
-//    private ChromeClientCallbackManager.ReceivedTitleCallback mCallback = new ChromeClientCallbackManager.ReceivedTitleCallback() {
-//        @Override
-//        public void onReceivedTitle(WebView view, String title) {
-//            if (mTitleTextView != null)
-//                mTitleTextView.setText(title);
-//        }
-//    };
-
-
-    private void showDialog() {
-
-        if (mAlertDialog == null)
-            mAlertDialog = new AlertDialog.Builder(this)
-                    .setMessage("您确定要关闭该页面吗?")
-                    .setNegativeButton("再逛逛", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (mAlertDialog != null)
-                                mAlertDialog.dismiss();
-                        }
-                    })//
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            if (mAlertDialog != null)
-                                mAlertDialog.dismiss();
-
-                            BaseWebActivity.this.finish();
-                        }
-                    }).create();
-        mAlertDialog.show();
-
-    }
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
@@ -186,14 +145,28 @@ public abstract class BaseWebActivity extends BaseActivity {
         super.onResume();
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         Log.i("Info", "result:" + requestCode + " result:" + resultCode);
-//        mAgentWeb.uploadFileResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_SCAN && resultCode == RESULT_OK) {
+            if (data != null) {
+                String content = data.getStringExtra(Constant.CODED_CONTENT);
+                showTip("扫描结果为：" + content);
+                if(PACS_TAG.equals(content)){
+                // 调接口
+//                    PacsLoginHelper.postPacsState();
+                    PacsLoginActivity.launch(this);
+                }
+                return;
+            }
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
+    protected void showTip(String str) {
+        ToastUtils.showSingleToast(this, str);
+    }
 
     @Override
     protected void onDestroy() {

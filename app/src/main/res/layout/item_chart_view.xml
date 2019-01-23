@@ -24,14 +24,21 @@
         android:gravity="right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <FrameLayout
-        android:id="@+id/flChart"
+    <ImageView
+        android:padding="@dimen/lay_20"
+        android:scaleType="centerCrop"
         android:layout_gravity="bottom"
-        android:paddingLeft="@dimen/lay_10"
-        android:paddingRight="@dimen/lay_10"
+        android:src="@drawable/chart"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/lay_180">
+        android:layout_height="wrap_content" />
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:id="@+id/flChart"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:paddingLeft="@dimen/lay_10"-->
+        <!--android:paddingRight="@dimen/lay_10"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/lay_180">-->
 
-    </FrameLayout>
+    <!--</LinearLayout>-->
 </FrameLayout>

@@ -1,24 +1,25 @@
 package mobile.fuvh.cn.followupvisithelper.voice.widget;
 
-import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.FrameLayout;
 
 import com.just.agentweb.AgentWeb;
+import com.just.agentweb.IAgentWebSettings;
 
 import cn.wowjoy.commonlibrary.utils.CommonUtils;
 import mobile.fuvh.cn.followupvisithelper.R;
 import mobile.fuvh.cn.followupvisithelper.patient.view.report.chart.ChartActivity;
-import mobile.fuvh.cn.followupvisithelper.patient.view.report.chart.widget.WebLayout;
 
 /**
  *
@@ -46,35 +47,69 @@ public class ItemChartView extends IChatView  {
     private void init() {
 
         setOnClickListener((v)->{
-            Log.e("ItemChartView","onclick");
             ChartActivity.launch(v.getContext());
         });
 
         View vRoot = LayoutInflater.from(getContext()).inflate(R.layout.item_chart_view, this);
-        FrameLayout flChart = vRoot.findViewById(R.id.flChart);
-        Context context = getContext();
-        if(context instanceof Activity){
-            Activity context1 = (Activity) context;
-            LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-            layoutParams.gravity = Gravity.CENTER;
-            mAgentWeb = AgentWeb.with(context1)
-                    .setAgentWebParent(flChart, layoutParams)
-                    .useDefaultIndicator()
-                    .setWebViewClient(new WebViewClient() {
-                        @Override
-                        public void onPageFinished(WebView view, String url) {
-                            super.onPageFinished(view, url);
-                            mAgentWeb.getJsAccessEntrace().quickCallJs("updateSize", "height:160px;width:320px;");
-                        }
-                    })
-                    .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
-                    .setWebLayout(new WebLayout(context1))
-                    .createAgentWeb()
-                    .ready()
-                    .go("https://shuyang0811.gitee.io/followhelper/zhibiao/line-styles.html");
-        }
+//        LinearLayout flChart = vRoot.findViewById(R.id.flChart);
+//        Context context = getContext();
+//        if(context instanceof Activity){
+//            Activity context1 = (Activity) context;
+//            LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+//            layoutParams.gravity = Gravity.CENTER;
+//            long p = System.currentTimeMillis();
+//            mAgentWeb = AgentWeb.with(context1)//
+//                    .setAgentWebParent(flChart, new LinearLayout.LayoutParams(-1, -1))//
+//                    .useDefaultIndicator()
+//                    .setAgentWebWebSettings(getSettings())
+////                .defaultProgressBarColor()
+////                .setReceivedTitleCallback(mCallback)
+//                    .setWebChromeClient(mWebChromeClient)
+//                    .setWebViewClient(mWebViewClient)
+//                    .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
+//                    .setWebLayout(new WebLayout(context1))
+//                    .createAgentWeb()
+//                    .ready()
+//                    .go("https://shuyang0811.gitee.io/followhelper/zhibiao/line-styles.html");
+//            //mAgentWeb.getLoader().loadUrl(getUrl());
+//            long n = System.currentTimeMillis();
+//            Log.i("Info", "init used time:" + (n - p));
+
+
+//        }
 
     }
+    protected IAgentWebSettings getSettings() {
+        return null;
+    }
+
+    private WebViewClient mWebViewClient = new WebViewClient() {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            return super.shouldOverrideUrlLoading(view, request);
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            //do you  work
+            Log.i("Info", "BaseWebActivity onPageStarted");
+        }
+
+        @Override
+        public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+            super.onReceivedError(view, request, error);
+
+        }
+    };
+    private WebChromeClient mWebChromeClient = new WebChromeClient() {
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            //do you work
+//            Log.i("Info","progress:"+newProgress);
+        }
+
+    };
+
 
     @Override
     public String getTipText() {

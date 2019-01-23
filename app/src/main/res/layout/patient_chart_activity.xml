@@ -55,11 +55,14 @@
             android:layout_height="@dimen/lay_258"
             android:layout_marginTop="@dimen/lay_15"
             android:background="@color/C_FFFFFF">
-            <FrameLayout
-                android:id="@+id/webRL"
+            <!--<FrameLayout-->
+                <!--android:id="@+id/webRL"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+            <ImageView
+                android:src="@drawable/chart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
             <ImageView
                 android:id="@+id/fullIV"
                 android:visibility="gone"

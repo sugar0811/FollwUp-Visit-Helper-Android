@@ -20,6 +20,7 @@ android {
             buildConfigField "String", "OUTPATIENT_HOST", "\"https://test-gateway.rubikstack.com/\""
             buildConfigField "String", "API_HOST", "\"https://test-gateway.rubikstack.com/doctor-assistant/\""
             buildConfigField "String", "WEB_HOST", "\"http://10.30.21.73:9000/\""
+            buildConfigField "String", "PACS_HOST", "\"http://47.100.16.211:8190\""
             buildConfigField "String", "MDID", "\"84e71f389a4b4fe5ad79261b4d56262e\""
             buildConfigField "String", "ORG_CODE", "\"1001\""
             buildConfigField "String", "ORG_NAME", "\"树兰\""

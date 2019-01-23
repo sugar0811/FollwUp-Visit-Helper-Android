@@ -5,6 +5,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -81,6 +82,7 @@ public class LayoutManagers {
      * A {@link GridLayoutManager} with the given spanCount.
      */
     public static LayoutManagerFactory grid(final int spanCount) {
+        Log.e("spanCount",spanCount+"..");
         return new LayoutManagerFactory() {
             @Override
             public RecyclerView.LayoutManager create(RecyclerView recyclerView) {

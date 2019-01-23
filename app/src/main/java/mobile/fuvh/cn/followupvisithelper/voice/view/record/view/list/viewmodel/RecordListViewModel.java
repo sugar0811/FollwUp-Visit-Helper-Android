@@ -48,7 +48,7 @@ public class RecordListViewModel extends AndroidViewModel{
                 if(aLong != 0){
                     recordBean.setRecordDuration(DateUtils.toTime(aLong));
                 }
-                recordBean.setLength((int) (aLong/1000));
+                recordBean.setLength((int) (aLong));
                 recordBean.setRecordPath(subFile[iFileLength].getAbsolutePath());
                 mRecordBeans.add(recordBean);
             }

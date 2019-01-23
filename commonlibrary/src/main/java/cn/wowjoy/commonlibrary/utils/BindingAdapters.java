@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -141,6 +142,7 @@ public class BindingAdapters {
     @BindingAdapter({"picPath"})
     public static void loadImageByFile(ImageView image, String path) {
             File file = new File(path);
+            Log.e("path",path+"...");
             if (file.exists()) {
                 Bitmap bitmap = BitmapFactory.decodeFile(path);
                 image.setImageBitmap(bitmap);

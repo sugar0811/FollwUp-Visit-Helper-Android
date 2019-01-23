@@ -43,6 +43,7 @@ public class HttpUtils {
     private static HttpUtils instance;
     private Object mUpdateServer;
     private Object mOauthServer;
+    private Object mPacsServer;
     private Object mGetWayServer;
     private Object mDownloadServer;
      private Object mTestService;
@@ -109,6 +110,18 @@ public class HttpUtils {
         }
         return (T) mOauthServer;
     }
+
+    public <T> T getPacsServer(Class<T> t) {
+        if (null == mPacsServer) {
+            synchronized (HttpUtils.class) {
+                if (null == mPacsServer) {
+                    mPacsServer = getBuilder(BuildConfig.PACS_HOST).build().create(t);
+                }
+            }
+        }
+        return (T) mPacsServer;
+    }
+
     public <T> T getOutpatinetService(Class<T> t) {
         if (null == mOutpatinetService) {
             synchronized (HttpUtils.class) {

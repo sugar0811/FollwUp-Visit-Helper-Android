@@ -61,7 +61,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </mobile.fuvh.cn.followupvisithelper.voice.widget.ItemReadPaperView>
-        <TextView
+
+            <TextView
             android:visibility="gone"
             android:text="您可以这样跟我说:"
             android:id="@+id/tvContent"
@@ -91,6 +92,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/ivInput"
                 android:padding="@dimen/lay_20"
@@ -179,6 +181,63 @@
 
             </LinearLayout>
            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlRecord"
+                android:visibility="gone"
+                android:background="@drawable/arc_menu"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <View
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/C_FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_50"/>
+                <ImageView
+                    android:id="@+id/ivState"
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/record_play"
+                    android:layout_width="@dimen/lay_40"
+                    android:layout_height="@dimen/lay_40" />
+                <ImageView
+                    android:id="@+id/ivClose"
+                    android:layout_margin="@dimen/lay_30"
+                    android:src="@drawable/record_close"
+                    android:layout_width="@dimen/lay_40"
+                    android:layout_height="@dimen/lay_40" />
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/ivDone"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/lay_30"
+                    android:src="@drawable/record_done"
+                    android:layout_width="@dimen/lay_40"
+                    android:layout_height="@dimen/lay_40" />
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/lay_15"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tvRecordState"
+                    android:textSize="@dimen/font_14"
+                    android:text="录音"
+                    android:textColor="@color/C_666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginLeft="@dimen/lay_5"
+                    android:id="@+id/tvTime"
+                    android:textColor="@color/C_333333"
+                    android:layout_gravity="right"
+                    android:text="00:00:00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
 
         </RelativeLayout>
         <LinearLayout

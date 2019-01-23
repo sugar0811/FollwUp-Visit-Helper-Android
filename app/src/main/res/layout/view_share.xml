@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/C_f7f8fc"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/tv_msg"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:textColor="@color/C_9C9C9C">
+
+        <LinearLayout
+            android:id="@+id/ll_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_white_item_clickable"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+            <ImageView
+                android:layout_width="29dp"
+                android:layout_height="25dp"
+                android:src="@drawable/wechat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_3"
+                android:text="微信"
+                android:textColor="@color/C_444444" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_toRightOf="@id/ll_wechat"
+            android:id="@+id/llDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_white_item_clickable"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+            <ImageView
+                android:layout_width="29dp"
+                android:layout_height="25dp"
+                android:src="@drawable/male" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_3"
+                android:text="同事"
+                android:textColor="@color/C_444444" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="@dimen/lay_3"
+        android:background="@drawable/selector_white_item_clickable"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/C_4A4A4A"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

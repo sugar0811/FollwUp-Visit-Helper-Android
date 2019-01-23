@@ -248,7 +248,6 @@ public class  VoiceHelper {
 
     public static void stopSpeaking(){
         getInstance().mTts.stopSpeaking();
-        getInstance().mTts.pauseSpeaking();
     }
 
     public static void pauseSpeaking(){

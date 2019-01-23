@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">随访助手</string>
+    <string name="app_name">临床小助</string>
     <string name="app_id">5bfe79ab</string>
     <string name="pref_key_translate">translate</string>
     <string name="voice_title">随访助手</string>

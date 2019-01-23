@@ -2,6 +2,7 @@ package mobile.fuvh.cn.followupvisithelper.contact.viewmodel;
 
 import android.app.Application;
 import android.support.annotation.NonNull;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import cn.wowjoy.commonlibrary.adapter.CommonAdapter;
 import cn.wowjoy.commonlibrary.viewmodel.BaseListViewModel;
 import mobile.fuvh.cn.followupvisithelper.R;
 import mobile.fuvh.cn.followupvisithelper.bean.SimpleBean;
+import mobile.fuvh.cn.followupvisithelper.contact.ContactsActivity;
 
 /**
  *
@@ -37,6 +39,15 @@ public class ContactsViewModel extends BaseListViewModel<SimpleBean>{
 
     @Override
     public CommonAdapter.OnItemClickListener getOnItemClickListener() {
-        return null;
+
+        return new CommonAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                if( v.getContext() instanceof ContactsActivity){
+                    ContactsActivity context = (ContactsActivity) v.getContext();
+                    context.shareFinish();
+                }
+            }
+        };
     }
 }

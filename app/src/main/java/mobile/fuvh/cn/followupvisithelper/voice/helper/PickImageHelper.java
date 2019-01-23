@@ -43,11 +43,7 @@ public class PickImageHelper {
                                 mTypePickDialog = null;
                                 if (i == 0) {
                                     // 选择了拍照
-                                    Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                                    mPhotoPath = getPhotoPath();
-                                    Uri imguri = Uri.fromFile(new File(mPhotoPath));
-                                    camera.putExtra(MediaStore.EXTRA_OUTPUT, imguri);
-                                    context1.startActivityForResult(camera, AppConstants.CAMERA_WITH_DATA);
+                                    goCamera(context1);
                                 } else {
                                     // 选择了相册选择
                                     Intent intent = new Intent(Intent.ACTION_PICK);
@@ -63,6 +59,14 @@ public class PickImageHelper {
 
     }
 
+    public static void goCamera(Activity context1) {
+        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        mPhotoPath = getPhotoPath();
+        Uri imguri = Uri.fromFile(new File(mPhotoPath));
+        camera.putExtra(MediaStore.EXTRA_OUTPUT, imguri);
+        context1.startActivityForResult(camera, AppConstants.CAMERA_WITH_DATA);
+    }
+
     public static String getPhotoPath() {
         return AppConstants.BASE_PATH_PIC + DateUtils.getCurrFullTimeDataSecond() + ".jpg";
     }
@@ -73,6 +77,7 @@ public class PickImageHelper {
             String photoPath = getPhotoPath();
             switch (requestCode) {
                 case CAMERA_WITH_DATA:
+
                     File f = ImageUtils.zoomImageFile(mPhotoPath, photoPath, 720);
                     if (f != null) {
                         file = f;

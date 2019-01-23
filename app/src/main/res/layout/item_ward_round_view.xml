@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="cn.wowjoy.commonlibrary.adapter.LayoutManagers"/>
+    </data>
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/lay_10"
+            android:id="@+id/llDiseaseRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_selector"
+            android:orientation="vertical"
+            android:padding="@dimen/lay_10">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivCollect"
+                    android:layout_width="@dimen/lay_25"
+                    android:layout_height="@dimen/lay_25"
+                    android:layout_gravity="right"
+                    android:layout_margin="@dimen/lay_5"
+                    android:src="@drawable/collect_selector" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="刘建国  2B16床"
+                        android:textColor="@color/C_333333"
+                        android:textSize="@dimen/font_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/lay_5"
+                        android:text="诊断：肠息肉，胃溃疡" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <View
+                android:layout_marginTop="@dimen/lay_10"
+                android:layout_marginBottom="@dimen/lay_10"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_1"
+                android:layerType="software"
+                android:background="@drawable/dash_line_mini" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_30"
+                    android:drawableLeft="@drawable/goutong_"
+                    android:drawablePadding="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:text="查房沟通"
+                    android:textSize="@dimen/font_15" />
+            </FrameLayout>
+                <TextView
+                    android:id="@+id/tvRecord"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:text="01:32"
+                    android:paddingLeft="@dimen/lay_10"
+                    android:paddingRight="@dimen/lay_10"
+                    android:gravity="center|end"
+                    android:height="@dimen/lay_40"
+                    android:textColor="@color/C_333333"
+                    android:background="@drawable/round_border_bg_blue"
+                    android:drawableLeft="@drawable/record_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvChaFang"
+                app:layoutManager="@{LayoutManagers.grid(3)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/lay_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/lay_30"-->
+                    <!--android:layout_height="@dimen/lay_30"-->
+                    <!--android:src="@drawable/mc_record" />-->
+                <FrameLayout
+                    android:background="@drawable/selector_white_item_clickable"
+                    android:id="@+id/flRecord"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/mc_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/lay_40"
+                    android:drawablePadding="@dimen/lay_10"
+                    android:gravity="center"
+                    android:text="语音速记"
+                    android:textColor="@color/C_494949"
+                    android:textSize="@dimen/font_14"
+                    android:textStyle="bold" />
+                </FrameLayout>
+                <View
+                    android:layout_width="@dimen/lay_1"
+                    android:layout_height="match_parent"
+                    android:background="@color/C_DADADA" />
+                <FrameLayout
+                    android:background="@drawable/selector_white_item_clickable"
+                    android:id="@+id/flCamera"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/carame_record"
+                    android:layout_marginLeft="@dimen/lay_10"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/lay_10"
+                    android:gravity="center"
+                    android:text="拍照记录"
+                    android:textColor="@color/C_494949"
+                    android:textSize="@dimen/font_14" />
+                </FrameLayout>
+                <!--</LinearLayout>-->
+            </LinearLayout>
+
+            <View
+                android:layerType="software"
+                android:layout_marginTop="@dimen/lay_10"
+                android:layout_marginBottom="@dimen/lay_10"
+                android:background="@drawable/dash_line_mini"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lay_1"/>
+            <LinearLayout
+                android:id="@+id/llDetailMsg"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_30"
+                        android:drawableLeft="@drawable/tizheng_"
+                        android:drawablePadding="@dimen/lay_10"
+                        android:gravity="left|center"
+                        android:text="查体体征"
+                        android:textSize="@dimen/font_15" />
+                    <TextView
+                        android:id="@+id/tvRecordTiZhen"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/lay_10"
+                        android:text="01:32"
+                        android:paddingLeft="@dimen/lay_10"
+                        android:paddingRight="@dimen/lay_10"
+                        android:gravity="center|end"
+                        android:height="@dimen/lay_40"
+                        android:textColor="@color/C_333333"
+                        android:background="@drawable/round_border_bg_blue"
+                        android:drawableLeft="@drawable/record_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rvTiZhen"
+                        app:layoutManager="@{LayoutManagers.grid(3)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/lay_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!--<ImageView-->
+                        <!--android:layout_width="@dimen/lay_30"-->
+                        <!--android:layout_height="@dimen/lay_30"-->
+                        <!--android:src="@drawable/mc_record" />-->
+                        <FrameLayout
+                            android:background="@drawable/selector_white_item_clickable"
+                            android:id="@+id/flRecord_chati"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_gravity="center"
+                                android:drawableLeft="@drawable/mc_record"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/lay_40"
+                                android:drawablePadding="@dimen/lay_10"
+                                android:gravity="center"
+                                android:text="语音速记"
+                                android:textColor="@color/C_494949"
+                                android:textSize="@dimen/font_14"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+                        <View
+                            android:layout_width="@dimen/lay_1"
+                            android:layout_height="match_parent"
+                            android:background="@color/C_DADADA" />
+                        <FrameLayout
+                            android:background="@drawable/selector_white_item_clickable"
+                            android:id="@+id/flCamera_chati"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_gravity="center"
+                                android:drawableLeft="@drawable/carame_record"
+                                android:layout_marginLeft="@dimen/lay_10"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/lay_10"
+                                android:gravity="center"
+                                android:text="拍照记录"
+                                android:textColor="@color/C_494949"
+                                android:textSize="@dimen/font_14" />
+                        </FrameLayout>
+                        <!--</LinearLayout>-->
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layerType="software"
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:layout_marginBottom="@dimen/lay_10"
+                    android:background="@drawable/dash_line_mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_1"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_30"
+                        android:drawableLeft="@drawable/tizheng_"
+                        android:drawablePadding="@dimen/lay_10"
+                        android:gravity="left|center"
+                        android:text="辅助检查"
+                        android:textSize="@dimen/font_15" />
+                    <FrameLayout
+                        android:layout_marginTop="@dimen/lay_10"
+                        android:id="@+id/flChild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvChildLeftText"
+                            android:textSize="@dimen/font_14"
+                            android:drawablePadding="@dimen/lay_5"
+                            android:drawableLeft="@drawable/oval_text_blue"
+                            android:textColor="@color/C_333333"
+                            android:text="胸部CT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/tvChildRightText"
+                            android:textSize="@dimen/font_14"
+                            android:textColor="@color/C_333333"
+                            android:layout_gravity="right"
+                            android:text="2018/10/01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </FrameLayout>
+                    <TextView
+                        android:layout_marginTop="@dimen/lay_5"
+                        android:text="右侧髂窝-右腹膜增厚纤维化考虑，膀胱壁局部毛糙，较前片（2018-11-23）相仿。盆腔少量积液。 另见：双侧胸腔少量积液，左下肺部分膨胀不全，较前片稍好转。"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tvPacs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="查看原影像>>"
+                        android:textColor="@color/C_494949" />
+
+                    <View
+                        android:id="@+id/vLine"
+                        android:layerType="software"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lay_1"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="@dimen/lay_10"
+                        android:background="@drawable/dash_line_mini" />
+                </LinearLayout>
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_30"
+                    android:drawableLeft="@drawable/yijian_"
+                    android:drawablePadding="@dimen/lay_10"
+                    android:gravity="left|center"
+                    android:text="治疗意见"
+                    android:textSize="@dimen/font_15" />
+                <TextView
+                    android:id="@+id/tvRecordYiJian"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:text="01:32"
+                    android:paddingLeft="@dimen/lay_10"
+                    android:paddingRight="@dimen/lay_10"
+                    android:gravity="center|end"
+                    android:height="@dimen/lay_40"
+                    android:textColor="@color/C_333333"
+                    android:background="@drawable/round_border_bg_blue"
+                    android:drawableLeft="@drawable/record_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvYiJian"
+                    app:layoutManager="@{LayoutManagers.grid(3)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="@dimen/lay_30"-->
+                    <!--android:layout_height="@dimen/lay_30"-->
+                    <!--android:src="@drawable/mc_record" />-->
+                    <FrameLayout
+                        android:background="@drawable/selector_white_item_clickable"
+                        android:id="@+id/flRecord_yijian"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/mc_record"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/lay_40"
+                            android:drawablePadding="@dimen/lay_10"
+                            android:gravity="center"
+                            android:text="语音速记"
+                            android:textColor="@color/C_494949"
+                            android:textSize="@dimen/font_14"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+                    <View
+                        android:layout_width="@dimen/lay_1"
+                        android:layout_height="match_parent"
+                        android:background="@color/C_DADADA" />
+                    <FrameLayout
+                        android:background="@drawable/selector_white_item_clickable"
+                        android:id="@+id/flCamera_yijian"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/carame_record"
+                            android:layout_marginLeft="@dimen/lay_10"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/lay_10"
+                            android:gravity="center"
+                            android:text="拍照记录"
+                            android:textColor="@color/C_494949"
+                            android:textSize="@dimen/font_14" />
+                    </FrameLayout>
+                    <!--</LinearLayout>-->
+                </LinearLayout>
+                <!--<TextView-->
+                <!--android:id="@+id/tvClose"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:text="收缩"-->
+                <!--android:gravity="right"-->
+                <!--android:textColor="@color/C_494949"-->
+                <!--android:drawableRight="@drawable/top"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+                <View
+                    android:layerType="software"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lay_1"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/lay_10"
+                    android:layout_marginTop="@dimen/lay_10"
+                    android:background="@drawable/dash_line_mini" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvExpand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:drawableRight="@drawable/down_expand"
+                android:gravity="right"
+                android:text="展开"
+                android:textColor="@color/C_494949" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
